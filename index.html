@@ -313,7 +313,14 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
         </div>
     </footer>
 
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script type="module" src="./src/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="module">
+        import { transformers } from './src/js/core/transformers.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Your existing code
+            console.log('Error Fortune Cookies loaded');
+        });
+    </script>
 </body>
 </html>
