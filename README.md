@@ -37,6 +37,9 @@ npm install error-fortune-cookies
 <script src="https://unpkg.com/error-fortune-cookies@1.0.0/dist/error-fortune.min.js"></script>
 ```
 
+### Direct Download
+You can also [download the latest release](https://github.com/avifenesh/Error-fun/releases) directly from GitHub.
+
 ## Quick Start
 
 ### Basic Usage
