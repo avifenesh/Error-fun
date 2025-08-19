@@ -315,7 +315,8 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
             transformButton.addEventListener('click', () => {
                 const errorMessage = errorInput.value.trim();
                 if (!errorMessage) {
-                    alert('Please enter an error message');
+                    // Replace alert with inline error message
+                    resultDiv.innerHTML = '<p class="error-message">Please enter an error message</p>';
                     return;
                 }
                 

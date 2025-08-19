@@ -30,16 +30,16 @@
     "ui",
     "frontend"
   ],
-  "author": "Error Fortune Cookies Team",
+  "author": "Avi Fenesh",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/error-fortune-cookies.git"
+    "url": "https://github.com/avifenesh/Error-fun.git"
   },
   "bugs": {
-    "url": "https://github.com/username/error-fortune-cookies/issues"
+    "url": "https://github.com/avifenesh/Error-fun/issues"
   },
-  "homepage": "https://errorcookies.com",
+  "homepage": "https://avifenesh.github.io/Error-fun/",
   "dependencies": {
     "html2canvas": "^1.4.1"
   },
