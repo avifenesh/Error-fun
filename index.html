@@ -47,6 +47,62 @@
         .button.secondary:hover {
             background-color: #e63946;
         }
+        
+        /* Interactive transformer section */
+        .transformer-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .transformer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .transformer-input {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .transformer-output {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .error-message {
+            font-family: monospace;
+            color: #e63946;
+            padding: 10px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid #e63946;
+            margin-bottom: 15px;
+        }
+        
+        .fortune-message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #4ecdc4;
+        }
+        
+        .transformer-style-select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +124,7 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
                 </div>
                 
                 <div class="try-it-now">
-                    <a href="try.html" class="button secondary">Try It Now!</a>
+                    <a href="#try-it-section" class="button secondary">Try It Now!</a>
                 </div>
                 
                 <div class="style-selector">
@@ -256,6 +312,49 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
                 <button class="button small" id="copy-js">Copy</button>
             </div>
         </section>
+        
+        <!-- Interactive Transformer Section -->
+        <section class="transformer-section" id="try-it-section">
+            <h2>Try It Yourself</h2>
+            <p>Transform your own error messages into creative wisdom with our interactive tool.</p>
+            
+            <div class="transformer-container">
+                <div class="transformer-input">
+                    <h3>Enter Your Error Message</h3>
+                    <textarea id="error-input" placeholder="Paste your error message here...
+Example: TypeError: Cannot read property 'length' of undefined"></textarea>
+                    
+                    <h3>Choose Transformer Style</h3>
+                    <select id="transformer-style" class="transformer-style-select">
+                        <option value="confucius">Error Confucius</option>
+                        <option value="haiku">Error Haiku</option>
+                        <option value="tarot">Syntax Error Tarot</option>
+                        <option value="blame">Blame Deflector</option>
+                        <option value="zen">Zen Meditation</option>
+                        <option value="motivational">Motivational Error</option>
+                        <option value="shakespeare">Shakespearean Drama</option>
+                        <option value="filmNoir">Film Noir Detective</option>
+                        <option value="sciFi">Sci-Fi Technobabble</option>
+                        <option value="pirate">Pirate Speak</option>
+                        <option value="cowboy">Cowboy Western</option>
+                        <option value="superhero">Superhero Comic</option>
+                        <option value="medieval">Medieval Fantasy</option>
+                        <option value="horror">B-Movie Horror</option>
+                        <option value="influencer">Social Media Influencer</option>
+                        <option value="legal">Legal Jargon</option>
+                        <option value="recipe">Cooking Recipe</option>
+                        <option value="sports">Sports Commentary</option>
+                    </select>
+                    
+                    <button id="transform-button" class="button primary">Transform Error</button>
+                </div>
+                
+                <div class="transformer-output" id="transformer-result">
+                    <h3>Your Fortune</h3>
+                    <p>Enter an error message and choose a style to see your fortune...</p>
+                </div>
+            </div>
+        </section>
     </main>
     
     <section class="examples">
@@ -318,8 +417,52 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
         import { transformers } from './src/js/core/transformers.js';
         
         document.addEventListener('DOMContentLoaded', () => {
-            // Your existing code
+            // Main page functionality
             console.log('Error Fortune Cookies loaded');
+            
+            // Interactive transformer functionality
+            const errorInput = document.getElementById('error-input');
+            const transformerStyle = document.getElementById('transformer-style');
+            const transformButton = document.getElementById('transform-button');
+            const resultDiv = document.getElementById('transformer-result');
+            
+            if (transformButton) {
+                transformButton.addEventListener('click', () => {
+                    const errorMessage = errorInput.value.trim();
+                    if (!errorMessage) {
+                        resultDiv.innerHTML = '<h3>Your Fortune</h3><p class="error-message">Please enter an error message</p>';
+                        return;
+                    }
+                    
+                    const selectedStyle = transformerStyle.value;
+                    const transformer = transformers[selectedStyle];
+                    
+                    if (!transformer) {
+                        resultDiv.innerHTML = '<h3>Your Fortune</h3><p>Transformer style not found</p>';
+                        return;
+                    }
+                    
+                    const fortune = transformer(errorMessage);
+                    
+                    resultDiv.innerHTML = `
+                        <h3>Your Fortune</h3>
+                        <div class="error-message">${errorMessage}</div>
+                        <div class="fortune-message">${fortune}</div>
+                    `;
+                });
+                
+                // Add some example error messages
+                const exampleErrors = [
+                    "TypeError: Cannot read property 'length' of undefined",
+                    "ReferenceError: x is not defined",
+                    "SyntaxError: Unexpected token {",
+                    "RangeError: Maximum call stack size exceeded",
+                    "Error: Network request failed"
+                ];
+                
+                const randomError = exampleErrors[Math.floor(Math.random() * exampleErrors.length)];
+                errorInput.value = randomError;
+            }
         });
     </script>
 </body>
