@@ -27,6 +27,15 @@ jobs:
       - name: Build
         run: npm run build:all
 
+      - name: Build CSS
+        run: npx parcel build src/css/main.css --out-dir dist
+
+      - name: Copy index.html to dist
+        run: cp index.html dist/
+
+      - name: Update CSS path in index.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/index.html
+
       - name: Copy try.html to dist
         run: cp try.html dist/
 
