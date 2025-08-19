@@ -309,7 +309,8 @@ textarea, input[type="text"] {
     padding: var(--spacing-md);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    background-color: white;
+    background-color: var(--card-background);
+    color: var(--text-color);
     margin-top: var(--spacing-md);
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     position: relative;
@@ -536,7 +537,7 @@ textarea, input[type="text"] {
 }
 
 .fortune-display.zen .fortune-content {
-    background-color: #ffffff;
+    background-color: var(--card-background);
     border-color: var(--zen-primary);
 }
 
@@ -558,7 +559,7 @@ textarea, input[type="text"] {
 }
 
 .fortune-display.chaos .fortune-content {
-    background-color: #ffffff;
+    background-color: var(--card-background);
     border-color: var(--chaos-primary);
 }
 
