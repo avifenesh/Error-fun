@@ -551,6 +551,22 @@ function zenTransformer(error) {
   return `${opening}, ${middle}. ${closing}`;
 }
 
+// Import additional creative transformers
+import {
+  shakespeareanTransformer,
+  filmNoirTransformer,
+  sciFiTransformer,
+  pirateTransformer,
+  westernTransformer,
+  superheroTransformer,
+  fantasyTransformer,
+  bMovieTransformer,
+  influencerTransformer,
+  legalTransformer,
+  recipeTransformer,
+  sportsTransformer
+} from './creative-transformers.js';
+
 // Export transformers
 export {
   confuciusTransformer,
@@ -560,5 +576,17 @@ export {
   motivationalTransformer,
   techSupportTransformer,
   poeticTransformer,
-  zenTransformer
+  zenTransformer,
+  shakespeareanTransformer,
+  filmNoirTransformer,
+  sciFiTransformer,
+  pirateTransformer,
+  westernTransformer,
+  superheroTransformer,
+  fantasyTransformer,
+  bMovieTransformer,
+  influencerTransformer,
+  legalTransformer,
+  recipeTransformer,
+  sportsTransformer
 };

@@ -7,7 +7,19 @@ import {
   motivationalTransformer,
   techSupportTransformer,
   poeticTransformer,
-  zenTransformer
+  zenTransformer,
+  shakespeareanTransformer,
+  filmNoirTransformer,
+  sciFiTransformer,
+  pirateTransformer,
+  westernTransformer,
+  superheroTransformer,
+  fantasyTransformer,
+  bMovieTransformer,
+  influencerTransformer,
+  legalTransformer,
+  recipeTransformer,
+  sportsTransformer
 } from './core/transformers.js';
 import CookieAnimator from './ui/animations.js';
 import html2canvas from 'html2canvas';
@@ -212,7 +224,7 @@ const ErrorFortune = (function() {
     const themeToApply = isDarkMode ? 'dark' : 'light';
     
     // Set the theme radio button
-    const themeRadio = document.querySelector(`input[name="theme"][value="${themeToApply}"]`);
+    const themeRadio = document.querySelector('input[name="theme"][value="' + themeToApply + '"]');
     if (themeRadio) {
       themeRadio.checked = true;
     }
@@ -282,27 +294,46 @@ const ErrorFortune = (function() {
     
     // Action buttons
     if (elements.fortuneActions) {
-      document.getElementById('copy-image')?.addEventListener('click', copyAsImage);
-      document.getElementById('copy-link')?.addEventListener('click', copyLink);
-      document.getElementById('download')?.addEventListener('click', downloadFortune);
-      document.getElementById('embed-code')?.addEventListener('click', showEmbedCode);
+      const copyImageBtn = document.getElementById('copy-image');
+      if (copyImageBtn) copyImageBtn.addEventListener('click', copyAsImage);
+      
+      const copyLinkBtn = document.getElementById('copy-link');
+      if (copyLinkBtn) copyLinkBtn.addEventListener('click', copyLink);
+      
+      const downloadBtn = document.getElementById('download');
+      if (downloadBtn) downloadBtn.addEventListener('click', downloadFortune);
+      
+      const embedCodeBtn = document.getElementById('embed-code');
+      if (embedCodeBtn) embedCodeBtn.addEventListener('click', showEmbedCode);
       
       // Social sharing buttons
-      document.getElementById('share-twitter')?.addEventListener('click', () => shareToSocial('twitter'));
-      document.getElementById('share-facebook')?.addEventListener('click', () => shareToSocial('facebook'));
-      document.getElementById('share-linkedin')?.addEventListener('click', () => shareToSocial('linkedin'));
+      const twitterBtn = document.getElementById('share-twitter');
+      if (twitterBtn) twitterBtn.addEventListener('click', () => shareToSocial('twitter'));
+      
+      const facebookBtn = document.getElementById('share-facebook');
+      if (facebookBtn) facebookBtn.addEventListener('click', () => shareToSocial('facebook'));
+      
+      const linkedinBtn = document.getElementById('share-linkedin');
+      if (linkedinBtn) linkedinBtn.addEventListener('click', () => shareToSocial('linkedin'));
     }
     
     // Copy buttons
     if (elements.embedSection) {
-      document.getElementById('copy-embed')?.addEventListener('click', () => {
-        copyToClipboard(elements.embedCodeDisplay.textContent);
-        showToast('Embed code copied!');
-      });
-      document.getElementById('copy-js')?.addEventListener('click', () => {
-        copyToClipboard(elements.jsApiDisplay.textContent);
-        showToast('API code copied!');
-      });
+      const copyEmbedBtn = document.getElementById('copy-embed');
+      if (copyEmbedBtn) {
+        copyEmbedBtn.addEventListener('click', () => {
+          copyToClipboard(elements.embedCodeDisplay.textContent);
+          showToast('Embed code copied!');
+        });
+      }
+      
+      const copyJsBtn = document.getElementById('copy-js');
+      if (copyJsBtn) {
+        copyJsBtn.addEventListener('click', () => {
+          copyToClipboard(elements.jsApiDisplay.textContent);
+          showToast('API code copied!');
+        });
+      }
     }
   }
   
@@ -323,13 +354,13 @@ const ErrorFortune = (function() {
       }
       
       // Set style radio
-      const styleRadio = document.querySelector(`input[name="style"][value="${style}"]`);
+      const styleRadio = document.querySelector('input[name="style"][value="' + style + '"]');
       if (styleRadio) {
         styleRadio.checked = true;
       }
       
       // Set theme radio
-      const themeRadio = document.querySelector(`input[name="theme"][value="${theme}"]`);
+      const themeRadio = document.querySelector('input[name="theme"][value="' + theme + '"]');
       if (themeRadio) {
         themeRadio.checked = true;
       }
@@ -360,8 +391,11 @@ const ErrorFortune = (function() {
       clearValidationError(elements.errorInput);
     }
     
-    const style = document.querySelector('input[name="style"]:checked')?.value || config.defaultStyle;
-    const theme = document.querySelector('input[name="theme"]:checked')?.value || config.defaultTheme;
+    const styleRadio = document.querySelector('input[name="style"]:checked');
+    const themeRadio = document.querySelector('input[name="theme"]:checked');
+    
+    const style = styleRadio ? styleRadio.value : config.defaultStyle;
+    const theme = themeRadio ? themeRadio.value : config.defaultTheme;
     
     crack(errorMessage, {
       style,
@@ -808,8 +842,11 @@ const ErrorFortune = (function() {
    */
   function copyLink() {
     const errorMessage = elements.errorInput.value.trim();
-    const style = document.querySelector('input[name="style"]:checked')?.value || config.defaultStyle;
-    const theme = document.querySelector('input[name="theme"]:checked')?.value || config.defaultTheme;
+    const styleRadio = document.querySelector('input[name="style"]:checked');
+    const themeRadio = document.querySelector('input[name="theme"]:checked');
+    
+    const style = styleRadio ? styleRadio.value : config.defaultStyle;
+    const theme = themeRadio ? themeRadio.value : config.defaultTheme;
     
     // Create URL with parameters
     const url = new URL(window.location.href);
@@ -827,8 +864,11 @@ const ErrorFortune = (function() {
    */
   function shareToSocial(platform) {
     const errorMessage = elements.errorInput.value.trim();
-    const style = document.querySelector('input[name="style"]:checked')?.value || config.defaultStyle;
-    const theme = document.querySelector('input[name="theme"]:checked')?.value || config.defaultTheme;
+    const styleRadio = document.querySelector('input[name="style"]:checked');
+    const themeRadio = document.querySelector('input[name="theme"]:checked');
+    
+    const style = styleRadio ? styleRadio.value : config.defaultStyle;
+    const theme = themeRadio ? themeRadio.value : config.defaultTheme;
     
     // Create URL with parameters
     const url = new URL(window.location.href);
@@ -996,7 +1036,19 @@ const ErrorFortune = (function() {
     motivational: motivationalTransformer,
     techSupport: techSupportTransformer,
     poetic: poeticTransformer,
-    zen: zenTransformer
+    zen: zenTransformer,
+    shakespeare: shakespeareanTransformer,
+    filmNoir: filmNoirTransformer,
+    sciFi: sciFiTransformer,
+    pirate: pirateTransformer,
+    western: westernTransformer,
+    superhero: superheroTransformer,
+    fantasy: fantasyTransformer,
+    bMovie: bMovieTransformer,
+    influencer: influencerTransformer,
+    legal: legalTransformer,
+    recipe: recipeTransformer,
+    sports: sportsTransformer
   };
   
   /**
@@ -1292,7 +1344,7 @@ const ErrorFortune = (function() {
     }
     
     // Set style radio
-    const styleRadio = document.querySelector(`input[name="style"][value="${fortune.style}"]`);
+    const styleRadio = document.querySelector('input[name="style"][value="' + fortune.style + '"]');
     if (styleRadio) {
       styleRadio.checked = true;
     }

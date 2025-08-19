@@ -6,6 +6,18 @@
     <title>Error Message Fortune Cookies</title>
     <link rel="stylesheet" href="./src/css/main.css">
     <meta name="description" content="Transform boring error messages into hilarious fortune cookie wisdom">
+    <style>
+        /* Additional styles for the expanded style options */
+        .style-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -61,6 +73,78 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
                             <input type="radio" name="style" value="motivational">
                             <span class="style-name">Motivational Error</span>
                             <span class="style-description">Inspirational posters from your failures</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="shakespeare">
+                            <span class="style-name">Shakespearean Drama</span>
+                            <span class="style-description">To debug or not to debug, that is the question</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="filmNoir">
+                            <span class="style-name">Film Noir Detective</span>
+                            <span class="style-description">Hard-boiled detective takes on your coding mysteries</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="sciFi">
+                            <span class="style-name">Sci-Fi Technobabble</span>
+                            <span class="style-description">Reverse the polarity of your error messages</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="pirate">
+                            <span class="style-name">Pirate Speak</span>
+                            <span class="style-description">Yarr! Errors be walkin' the plank!</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="western">
+                            <span class="style-name">Cowboy Western</span>
+                            <span class="style-description">Saddle up for some frontier debugging</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="superhero">
+                            <span class="style-name">Superhero Comic</span>
+                            <span class="style-description">POW! BAM! Your code needs a hero!</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="fantasy">
+                            <span class="style-name">Medieval Fantasy</span>
+                            <span class="style-description">A quest to vanquish the dragon of errors</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="bMovie">
+                            <span class="style-name">B-Movie Horror</span>
+                            <span class="style-description">ATTACK OF THE 50-FOOT BUG!</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="influencer">
+                            <span class="style-name">Social Media Influencer</span>
+                            <span class="style-description">OMG you guys! This error is literally everything! 😱</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="legal">
+                            <span class="style-name">Legal Jargon</span>
+                            <span class="style-description">Pursuant to Section 404 of the Code</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="recipe">
+                            <span class="style-name">Cooking Recipe</span>
+                            <span class="style-description">A delicious recipe for disaster</span>
+                        </label>
+                        
+                        <label class="style-option">
+                            <input type="radio" name="style" value="sports">
+                            <span class="style-name">Sports Commentary</span>
+                            <span class="style-description">And the crowd goes wild for this error!</span>
                         </label>
                     </div>
                 </div>
@@ -176,11 +260,11 @@ Example: TypeError: Cannot read property 'length' of undefined"></textarea>
                 </div>
                 
                 <div class="example-card">
-                    <div class="example-fortune tarot">
-                        <h3>Syntax Error Tarot</h3>
+                    <div class="example-fortune shakespeare">
+                        <h3>Shakespearean Drama</h3>
                         <div class="fortune-content">
                             <p class="error">SyntaxError: Unexpected token {</p>
-                            <p class="wisdom">The Curly Brace appears in reverse position. A structure in your life is opening before it should. Patience with syntax will reveal the proper path.</p>
+                            <p class="wisdom">Alas, what tragedy befalls thy code! Thy syntax hath more gaps than a peasant's teeth. What light through yonder console breaks? It is the solution, and wisdom is the sun.</p>
                         </div>
                     </div>
                 </div>
