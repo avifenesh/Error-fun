@@ -1,0 +1,61 @@
+{
+  "name": "error-fortune-cookies",
+  "version": "1.0.0",
+  "description": "Transform boring error messages into hilarious fortune cookie wisdom",
+  "main": "dist/error-fortune.js",
+  "module": "dist/error-fortune.esm.js",
+  "unpkg": "dist/error-fortune.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel build src/js/index.js --out-file error-fortune.js --out-dir dist",
+    "build:esm": "parcel build src/js/index.js --out-file error-fortune.esm.js --out-dir dist --experimental-scope-hoisting",
+    "build:min": "parcel build src/js/index.js --out-file error-fortune.min.js --out-dir dist --experimental-scope-hoisting",
+    "build:all": "npm run build && npm run build:esm && npm run build:min",
+    "test": "jest --config jest.config.json",
+    "lint": "eslint src/**/*.js",
+    "prepublishOnly": "npm run build:all"
+  },
+  "keywords": [
+    "error",
+    "fortune",
+    "cookie",
+    "humor",
+    "developer",
+    "debugging",
+    "javascript",
+    "ui",
+    "frontend"
+  ],
+  "author": "Error Fortune Cookies Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/error-fortune-cookies.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/error-fortune-cookies/issues"
+  },
+  "homepage": "https://errorcookies.com",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-jest": "^29.5.0",
+    "eslint": "^8.42.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
+}

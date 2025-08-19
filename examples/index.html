@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Fortune Cookies - Examples</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .example-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        h2 {
+            margin-top: 0;
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .button:hover {
+            background-color: #ff5252;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #f0f0f0;
+            }
+            
+            .example-section {
+                border-color: #444;
+                background-color: #2d2d2d;
+            }
+            
+            pre {
+                background-color: #333;
+                color: #f0f0f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Error Fortune Cookies - Examples</h1>
+    <p>This page demonstrates different ways to use the Error Fortune Cookies library.</p>
+    
+    <div class="example-section">
+        <h2>Basic Usage</h2>
+        <p>Generate a fortune with JavaScript:</p>
+        <pre><code>ErrorFortune.crack("TypeError: Cannot read property 'length' of undefined", {
+  target: "basic-example",
+  style: "confucius"
+});</code></pre>
+        <button class="button" id="basic-button">Try it</button>
+        <div id="basic-example" class="fortune-display">
+            <div class="fortune-placeholder">
+                <p class="placeholder-text">Click the button to generate a fortune</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="example-section">
+        <h2>Custom Element</h2>
+        <p>Use the custom element for easy embedding:</p>
+        <pre><code>&lt;error-fortune 
+  message="ReferenceError: x is not defined" 
+  style="haiku"
+  theme="dark"&gt;
+&lt;/error-fortune&gt;</code></pre>
+        <button class="button" id="element-button">Show Example</button>
+        <div id="element-container"></div>
+    </div>
+    
+    <div class="example-section">
+        <h2>Different Styles</h2>
+        <p>Try different fortune styles:</p>
+        <div class="style-buttons">
+            <button class="button" data-style="confucius">Confucius</button>
+            <button class="button" data-style="haiku">Haiku</button>
+            <button class="button" data-style="tarot">Tarot</button>
+            <button class="button" data-style="blame">Blame</button>
+            <button class="button" data-style="motivational">Motivational</button>
+        </div>
+        <div id="style-example" class="fortune-display">
+            <div class="fortune-placeholder">
+                <p class="placeholder-text">Click a style button to generate a fortune</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="example-section">
+        <h2>Error Handling Integration</h2>
+        <p>Integrate with try/catch blocks:</p>
+        <pre><code>try {
+  // This will cause an error
+  const obj = null;
+  document.getElementById("result").textContent = obj.nonExistentProperty;
+} catch (error) {
+  ErrorFortune.crack(error.toString(), {
+    target: "error-example",
+    style: "blame"
+  });
+}</code></pre>
+        <button class="button" id="error-button">Trigger Error</button>
+        <div id="error-example" class="fortune-display">
+            <div class="fortune-placeholder">
+                <p class="placeholder-text">Click the button to trigger an error</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="example-section">
+        <h2>Shareable Links</h2>
+        <p>Generate shareable links with URL parameters:</p>
+        <pre><code>function createShareableLink(error, style, theme) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('error', encodeURIComponent(error));
+  url.searchParams.set('style', style);
+  url.searchParams.set('theme', theme);
+  return url.toString();
+}</code></pre>
+        <div>
+            <label for="share-error">Error message:</label>
+            <input type="text" id="share-error" value="SyntaxError: Unexpected token }" style="width: 100%; margin-bottom: 10px;">
+            <label for="share-style">Style:</label>
+            <select id="share-style" style="margin-bottom: 10px;">
+                <option value="confucius">Confucius</option>
+                <option value="haiku">Haiku</option>
+                <option value="tarot">Tarot</option>
+                <option value="blame">Blame</option>
+                <option value="motivational">Motivational</option>
+            </select>
+            <label for="share-theme">Theme:</label>
+            <select id="share-theme" style="margin-bottom: 10px;">
+                <option value="zen">Zen</option>
+                <option value="chaos">Chaos</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
+            <button class="button" id="share-button">Generate Link</button>
+            <div id="share-result" style="margin-top: 10px; word-break: break-all;"></div>
+        </div>
+    </div>
+    
+    <p><a href="../index.html">Back to main page</a> | <a href="../docs/api.html">API Documentation</a></p>
+    
+    <script type="module">
+        import ErrorFortune from '../src/js/index.js';
+        
+        // Basic example
+        document.getElementById('basic-button').addEventListener('click', () => {
+            ErrorFortune.crack("TypeError: Cannot read property 'length' of undefined", {
+                target: "basic-example",
+                style: "confucius"
+            });
+        });
+        
+        // Custom element example
+        document.getElementById('element-button').addEventListener('click', () => {
+            const container = document.getElementById('element-container');
+            container.innerHTML = '<error-fortune message="ReferenceError: x is not defined" style="haiku" theme="dark"></error-fortune>';
+        });
+        
+        // Style examples
+        document.querySelectorAll('.style-buttons .button').forEach(button => {
+            button.addEventListener('click', () => {
+                const style = button.dataset.style;
+                ErrorFortune.crack("SyntaxError: Unexpected token }", {
+                    target: "style-example",
+                    style: style
+                });
+            });
+        });
+        
+        // Error handling example
+        document.getElementById('error-button').addEventListener('click', () => {
+            try {
+                // This will cause an error
+                const obj = null;
+                document.getElementById("result").textContent = obj.nonExistentProperty;
+            } catch (error) {
+                ErrorFortune.crack(error.toString(), {
+                    target: "error-example",
+                    style: "blame"
+                });
+            }
+        });
+        
+        // Shareable link example
+        document.getElementById('share-button').addEventListener('click', () => {
+            const error = document.getElementById('share-error').value;
+            const style = document.getElementById('share-style').value;
+            const theme = document.getElementById('share-theme').value;
+            
+            const url = new URL(window.location.origin + '/index.html');
+            url.searchParams.set('error', encodeURIComponent(error));
+            url.searchParams.set('style', style);
+            url.searchParams.set('theme', theme);
+            
+            const shareResult = document.getElementById('share-result');
+            shareResult.textContent = url.toString();
+            
+            // Create a clickable link
+            const link = document.createElement('a');
+            link.href = url.toString();
+            link.textContent = 'Open this fortune';
+            link.target = '_blank';
+            link.className = 'button';
+            link.style.marginLeft = '10px';
+            
+            shareResult.appendChild(document.createElement('br'));
+            shareResult.appendChild(link);
+        });
+    </script>
+</body>
+</html>
