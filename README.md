@@ -11,7 +11,7 @@ Error Message Fortune Cookies is a lightweight JavaScript library that turns fru
 
 ## Features
 
-- **8 Fortune Styles**: Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, Poetic, and Zen Meditation
+- **20 Fortune Styles**: Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, Poetic, Zen Meditation, Shakespearean Drama, Film Noir Detective, Sci-Fi Technobabble, Pirate Speak, Cowboy Western, Superhero Comic, Medieval Fantasy, B-Movie Horror, Social Media Influencer, Legal Jargon, Cooking Recipe, and Sports Commentary
 - **4 Visual Themes**: Zen, Chaos, Dark, and Light themes to match your application
 - **Animated Cookie**: Engaging crack animation with fortune reveal
 - **Sharing Options**: Generate images, copy links, and share to social media
@@ -103,6 +103,18 @@ ErrorFortune.crack("SyntaxError: Unexpected token", {
 - `techSupport` - IT help desk responses
 - `poetic` - Elegant poetic verse
 - `zen` - Mindful meditation reflections
+- `shakespeare` - Dramatic Shakespearean dialogue
+- `filmNoir` - Hard-boiled detective monologue
+- `sciFi` - Futuristic technical jargon
+- `pirate` - Swashbuckling pirate speak
+- `cowboy` - Wild west frontier wisdom
+- `superhero` - Comic book hero proclamations
+- `medieval` - Fantasy realm declarations
+- `horror` - B-movie horror narration
+- `influencer` - Social media style updates
+- `legal` - Complicated legal terminology
+- `recipe` - Cooking instructions format
+- `sports` - Enthusiastic sports commentary
 
 ### Available Themes
 - `zen` - Calm, minimalist design
