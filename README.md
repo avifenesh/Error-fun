@@ -147,3 +147,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### Automated Publishing
+
+This project uses GitHub Actions to automate the build, test, and deployment processes:
+
+- Every push to the main branch automatically deploys to GitHub Pages
+- Creating a new GitHub Release automatically publishes to npm
+- See the [workflows directory](.github/workflows) for more details
