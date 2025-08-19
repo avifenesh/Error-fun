@@ -615,6 +615,7 @@ textarea:focus, input[type="text"]:focus {
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 1000px;
+    color: var(--text-color);
 }
 
 .fortune-display::after {
@@ -654,6 +655,7 @@ textarea:focus, input[type="text"]:focus {
     width: 100%;
     position: relative;
     z-index: 2;
+    color: var(--text-color);
 }
 
 .cookie-svg-container {
@@ -669,10 +671,11 @@ textarea:focus, input[type="text"]:focus {
 }
 
 .placeholder-text {
-    color: var(--light-text);
+    color: var(--text-color);
     font-style: italic;
     position: relative;
     padding-bottom: var(--spacing-md);
+    font-size: 1.1rem;
 }
 
 .placeholder-text::after {
@@ -1014,6 +1017,7 @@ textarea:focus, input[type="text"]:focus {
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
+    color: var(--text-color);
 }
 
 .examples::before {
@@ -1039,6 +1043,7 @@ textarea:focus, input[type="text"]:focus {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
+    color: var(--text-color);
 }
 
 .example-card {
@@ -1049,6 +1054,7 @@ textarea:focus, input[type="text"]:focus {
     transition: all var(--transition-normal);
     border: 1px solid rgba(0,0,0,0.05);
     position: relative;
+    color: var(--text-color);
 }
 
 .example-card:hover {
@@ -1058,6 +1064,7 @@ textarea:focus, input[type="text"]:focus {
 
 .example-fortune {
     padding: var(--spacing-lg);
+    color: var(--text-color);
 }
 
 .example-fortune h3 {
@@ -1865,5 +1872,21 @@ button:focus, a:focus, input:focus, textarea:focus {
     
     .example-card {
         border: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .placeholder-text {
+        color: #aaa;
+    }
+    
+    .fortune-display {
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .example-fortune h3 {
+        color: var(--primary-color);
+    }
+    
+    .example-fortune .fortune-content {
+        background-color: #252525;
     }
 }
