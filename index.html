@@ -27,6 +27,26 @@
             color: var(--color-accent);
             text-decoration: underline;
         }
+        
+        .try-it-now {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .button.secondary {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .button.secondary:hover {
+            background-color: #e63946;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +65,10 @@
                 <div class="input-group">
                     <textarea id="error-message" placeholder="Paste your error message here...
 Example: TypeError: Cannot read property 'length' of undefined"></textarea>
+                </div>
+                
+                <div class="try-it-now">
+                    <a href="try.html" class="button secondary">Try It Now!</a>
                 </div>
                 
                 <div class="style-selector">

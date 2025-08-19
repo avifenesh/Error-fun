@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Error Message Fortune Cookies</title>
+    <link rel="stylesheet" href="./src/css/main.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #4ecdc4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .tagline {
+            margin: 10px 0 0;
+            font-style: italic;
+        }
+        
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .input-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        .output-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #e63946;
+        }
+        
+        .result {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .error-message {
+            font-family: monospace;
+            color: #e63946;
+            padding: 10px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid #e63946;
+            margin-bottom: 15px;
+        }
+        
+        .fortune-message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #4ecdc4;
+        }
+        
+        .style-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .style-option {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .style-option input {
+            margin-right: 8px;
+        }
+        
+        .style-name {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .style-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        
+        footer a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Try Error Message Fortune Cookies</h1>
+            <p class="tagline">Transform your error messages into creative wisdom</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <main>
+            <section class="input-section">
+                <h2>Enter Your Error Message</h2>
+                <textarea id="error-input" placeholder="Paste your error message here...
+Example: TypeError: Cannot read property 'length' of undefined"></textarea>
+                
+                <h3>Choose Transformer Style</h3>
+                <div class="style-options">
+                    <label class="style-option">
+                        <input type="radio" name="style" value="confucius" checked>
+                        <span class="style-name">Error Confucius</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="haiku">
+                        <span class="style-name">Error Haiku</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="tarot">
+                        <span class="style-name">Syntax Error Tarot</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="blame">
+                        <span class="style-name">Blame Deflector</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="zen">
+                        <span class="style-name">Zen Meditation</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="motivational">
+                        <span class="style-name">Motivational Error</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="shakespeare">
+                        <span class="style-name">Shakespearean Drama</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="filmNoir">
+                        <span class="style-name">Film Noir Detective</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="sciFi">
+                        <span class="style-name">Sci-Fi Technobabble</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="pirate">
+                        <span class="style-name">Pirate Speak</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="cowboy">
+                        <span class="style-name">Cowboy Western</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="superhero">
+                        <span class="style-name">Superhero Comic</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="medieval">
+                        <span class="style-name">Medieval Fantasy</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="horror">
+                        <span class="style-name">B-Movie Horror</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="influencer">
+                        <span class="style-name">Social Media Influencer</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="legal">
+                        <span class="style-name">Legal Jargon</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="recipe">
+                        <span class="style-name">Cooking Recipe</span>
+                    </label>
+                    
+                    <label class="style-option">
+                        <input type="radio" name="style" value="sports">
+                        <span class="style-name">Sports Commentary</span>
+                    </label>
+                </div>
+                
+                <button id="transform-button">Transform Error</button>
+            </section>
+            
+            <section class="output-section">
+                <h2>Your Fortune</h2>
+                <div id="result" class="result">
+                    <p>Enter an error message and choose a style to see your fortune...</p>
+                </div>
+            </section>
+        </main>
+        
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Error Message Fortune Cookies | <a href="https://github.com/avifenesh/Error-fun">GitHub</a> | <a href="https://avifenesh.github.io/Error-fun/">Live Demo</a></p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { transformers } from './src/js/core/transformers.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const errorInput = document.getElementById('error-input');
+            const transformButton = document.getElementById('transform-button');
+            const resultDiv = document.getElementById('result');
+            const styleOptions = document.querySelectorAll('input[name="style"]');
+            
+            transformButton.addEventListener('click', () => {
+                const errorMessage = errorInput.value.trim();
+                if (!errorMessage) {
+                    alert('Please enter an error message');
+                    return;
+                }
+                
+                let selectedStyle = 'confucius';
+                styleOptions.forEach(option => {
+                    if (option.checked) {
+                        selectedStyle = option.value;
+                    }
+                });
+                
+                const transformer = transformers[selectedStyle];
+                if (!transformer) {
+                    resultDiv.innerHTML = '<p>Transformer style not found</p>';
+                    return;
+                }
+                
+                const fortune = transformer(errorMessage);
+                
+                resultDiv.innerHTML = `
+                    <div class="error-message">${errorMessage}</div>
+                    <div class="fortune-message">${fortune}</div>
+                `;
+            });
+            
+            // Add some example error messages
+            const exampleErrors = [
+                "TypeError: Cannot read property 'length' of undefined",
+                "ReferenceError: x is not defined",
+                "SyntaxError: Unexpected token {",
+                "RangeError: Maximum call stack size exceeded",
+                "Error: Network request failed"
+            ];
+            
+            const randomError = exampleErrors[Math.floor(Math.random() * exampleErrors.length)];
+            errorInput.value = randomError;
+        });
+    </script>
+</body>
+</html>

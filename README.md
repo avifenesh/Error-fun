@@ -23,6 +23,8 @@ Error Message Fortune Cookies is a lightweight JavaScript library that turns fru
 
 Check out the live demo at [https://avifenesh.github.io/Error-fun/](https://avifenesh.github.io/Error-fun/)
 
+Want to try it right now? Use our [interactive transformer tool](https://avifenesh.github.io/Error-fun/try.html) to convert your own error messages!
+
 ## Installation
 
 ### NPM
