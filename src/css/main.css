@@ -1,3 +1,6 @@
+/* Add Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
 /* 
  * Error Message Fortune Cookies
  * Main CSS file
@@ -69,12 +72,16 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     padding-bottom: var(--spacing-xl);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     margin-bottom: var(--spacing-md);
     line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 a {
@@ -91,7 +98,7 @@ a:hover {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-lg);
 }
 
 /* Header */
@@ -115,6 +122,24 @@ header .tagline {
 /* Main sections */
 section {
     margin-bottom: var(--spacing-xl);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
 }
 
 /* Form elements */
@@ -1106,7 +1131,7 @@ button:focus, a:focus, input:focus, textarea:focus {
 /* Form validation */
 .error-input {
     border-color: var(--error-color) !important;
-    box-shadow: 0 0 0 1px var(--error-color);
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
 }
 
 .validation-error {
