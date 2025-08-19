@@ -6,7 +6,8 @@ import {
   tarotTransformer,
   motivationalTransformer,
   techSupportTransformer,
-  poeticTransformer
+  poeticTransformer,
+  zenTransformer
 } from './core/transformers.js';
 import CookieAnimator from './ui/animations.js';
 import html2canvas from 'html2canvas';
@@ -872,20 +873,12 @@ const ErrorFortune = (function() {
       showToast('Could not open share window. Please check your popup blocker settings.', 'error');
     }
   }
-  function copyLink() {
-    const errorMessage = elements.errorInput.value.trim();
-    const style = document.querySelector('input[name="style"]:checked')?.value || config.defaultStyle;
-    const theme = document.querySelector('input[name="theme"]:checked')?.value || config.defaultTheme;
-    
-    // Create URL with parameters
-    const url = new URL(window.location.href);
-    url.searchParams.set('error', encodeURIComponent(errorMessage));
-    url.searchParams.set('style', style);
-    url.searchParams.set('theme', theme);
-    
-    copyToClipboard(url.toString());
-    showToast('Link copied to clipboard!');
-  }
+  
+  /**
+   * Show toast notification
+   * @param {string} message - The message to show
+   * @param {string} type - The type of toast (success, error, info)
+   */
   function showToast(message, type = 'success') {
     // Check if toast container exists, create if not
     let toastContainer = document.getElementById('toast-container');
@@ -1002,7 +995,8 @@ const ErrorFortune = (function() {
     blame: blameTransformer,
     motivational: motivationalTransformer,
     techSupport: techSupportTransformer,
-    poetic: poeticTransformer
+    poetic: poeticTransformer,
+    zen: zenTransformer
   };
   
   /**
@@ -1362,22 +1356,6 @@ const ErrorFortune = (function() {
     setTimeout(() => {
       liveRegion.textContent = '';
     }, 3000);
-  }
-  function updateFavoriteButtonState(fortune) {
-    const favoriteBtn = document.getElementById('favorite-fortune');
-    if (!favoriteBtn) return;
-    
-    const favorites = getFavorites();
-    const isFavorite = favorites.some(f => 
-      f.original === fortune.original && f.style === fortune.style);
-    
-    if (isFavorite) {
-      favoriteBtn.classList.add('active');
-      favoriteBtn.title = 'Remove from favorites';
-    } else {
-      favoriteBtn.classList.remove('active');
-      favoriteBtn.title = 'Add to favorites';
-    }
   }
   
   /**

@@ -586,6 +586,82 @@ const ErrorFortune = (function() {
         },
         
         /**
+         * Transform error into zen meditation style
+         * @param {string} error - The error message
+         * @returns {string} Zen meditation
+         */
+        zen: function(error) {
+            // Extract key parts from the error
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+            
+            // Zen meditation phrases
+            const openings = [
+                "In the silence between keystrokes",
+                "Breathe in the error, breathe out the solution",
+                "The code that breaks teaches us the most",
+                "When the program crashes, listen closely",
+                "The bug is not your enemy, but your teacher",
+                "In the garden of programming",
+                "The wise developer sees errors as guides",
+                "Sit with your error in mindful awareness",
+                "The path to clean code is paved with errors",
+                "Like water flowing around rocks"
+            ];
+            
+            // Middle phrases based on error types
+            const middles = {
+                TypeError: [
+                    "types flow into one another like rivers to the sea",
+                    "confusion between what is and what appears to be",
+                    "the nature of objects reveals itself through errors",
+                    "expectations and reality stand apart"
+                ],
+                ReferenceError: [
+                    "we seek what is not there, yet learn what is",
+                    "absence teaches us about presence",
+                    "the empty space holds as much meaning as the filled",
+                    "we learn the value of preparation and initialization"
+                ],
+                SyntaxError: [
+                    "form and structure create meaning",
+                    "the grammar of code speaks of deeper patterns",
+                    "order emerges from careful attention to detail",
+                    "each symbol must find its proper place"
+                ],
+                Default: [
+                    "we find the path by noticing where we stumble",
+                    "errors illuminate the way forward",
+                    "patience reveals what haste conceals",
+                    "the obstacle becomes the way"
+                ]
+            };
+            
+            // Closing wisdom
+            const closings = [
+                "Return to your code with fresh eyes.",
+                "The solution will appear when the mind is still.",
+                "Each error brings you closer to understanding.",
+                "This moment of confusion will pass.",
+                "Embrace the error as part of the journey.",
+                "The compiler speaks wisdom through its errors.",
+                "In debugging, we discover our assumptions.",
+                "The error is a gift that points to growth.",
+                "Let go of frustration; hold onto curiosity.",
+                "The path of learning is never straight."
+            ];
+            
+            // Select random elements
+            const opening = openings[Math.floor(Math.random() * openings.length)];
+            const middleList = middles[errorType] || middles.Default;
+            const middle = middleList[Math.floor(Math.random() * middleList.length)];
+            const closing = closings[Math.floor(Math.random() * closings.length)];
+            
+            // Combine into zen meditation
+            return `${opening}, ${middle}. ${closing}`;
+        },
+        
+        /**
          * Transform error into motivational poster text
          * @param {string} error - The error message
          * @returns {string} Motivational text
