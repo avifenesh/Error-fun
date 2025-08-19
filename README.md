@@ -19,7 +19,7 @@ Error Message Fortune Cookies is a lightweight JavaScript library that turns fru
 - **Fully Accessible**: Screen reader support and keyboard navigation
 - **Multiple Integration Options**: JavaScript API, Custom Element, or iframe embed
 
-## Demo
+## Live Demo
 
 Check out the live demo at [https://avifenesh.github.io/Error-fun/](https://avifenesh.github.io/Error-fun/)
 
