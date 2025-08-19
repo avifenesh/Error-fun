@@ -11,13 +11,17 @@ Error Message Fortune Cookies is a lightweight JavaScript library that turns fru
 
 ## Features
 
-- **7 Fortune Styles**: Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, and Poetic
+- **8 Fortune Styles**: Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, Poetic, and Zen Meditation
 - **4 Visual Themes**: Zen, Chaos, Dark, and Light themes to match your application
 - **Animated Cookie**: Engaging crack animation with fortune reveal
 - **Sharing Options**: Generate images, copy links, and share to social media
 - **Favorites & History**: Save and revisit your favorite fortunes
 - **Fully Accessible**: Screen reader support and keyboard navigation
 - **Multiple Integration Options**: JavaScript API, Custom Element, or iframe embed
+
+## Demo
+
+Check out the live demo at [https://avifenesh.github.io/Error-fun/](https://avifenesh.github.io/Error-fun/)
 
 ## Installation
 
@@ -98,6 +102,7 @@ ErrorFortune.crack("SyntaxError: Unexpected token", {
 - `motivational` - Inspirational poster style
 - `techSupport` - IT help desk responses
 - `poetic` - Elegant poetic verse
+- `zen` - Mindful meditation reflections
 
 ### Available Themes
 - `zen` - Calm, minimalist design

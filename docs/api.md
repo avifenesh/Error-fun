@@ -105,6 +105,7 @@ The library includes several fortune styles:
 - `motivational`: Inspirational poster style
 - `techSupport`: IT help desk responses
 - `poetic`: Elegant poetic verse
+- `zen`: Mindful meditation reflections
 
 ### Custom Transformers
 
