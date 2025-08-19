@@ -133,16 +133,22 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
+            margin-bottom: 8px;
+            position: relative;
         }
         
         .style-option input {
             margin-right: 8px;
         }
         
-        .style-name {
+        .style-option input:checked + .style-name {
+            color: #ff6b6b;
             font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
+        }
+        
+        .style-option:has(input:checked) {
+            border-color: #ff6b6b;
+            background-color: rgba(255, 107, 107, 0.05);
         }
         
         .style-description {
