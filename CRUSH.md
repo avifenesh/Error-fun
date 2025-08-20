@@ -2,34 +2,43 @@
 
 ## Build Commands
 ```bash
-# Add build commands here when project is set up
-# npm run build
-# cargo build
-# go build
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+npm run build:all
+
+# Build specific formats
+npm run build:esm
+npm run build:min
 ```
 
 ## Test Commands
 ```bash
-# Add test commands here when project is set up
-# npm test
-# npm test -- --testNamePattern="specific test"
-# cargo test
-# go test ./...
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
 ```
 
 ## Lint/Format Commands
 ```bash
-# Add linting commands here when project is set up
-# npm run lint
-# npm run format
-# cargo clippy
-# go fmt ./...
+# Run linter
+npm run lint
+
+# Fix linting issues automatically
+npm run lint:fix
 ```
 
 ## Code Style Guidelines
 
 ### General
-- Use consistent indentation (2 or 4 spaces)
+- Use consistent indentation (2 spaces)
 - Follow language-specific naming conventions
 - Keep functions small and focused
 - Write descriptive variable and function names
@@ -45,6 +54,7 @@
 - Prefer self-documenting code over comments
 
 ## Project Structure
-- Organize files by feature/module
-- Keep related files together
-- Use clear directory names
+- src/js/core: Core transformation logic
+- src/js/ui: UI components and animations
+- src/css: Styling
+- tests: Test files

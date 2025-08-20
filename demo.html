@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Message Fortune Cookies - Demo</title>
+    <style>
+        /* Basic styles for the demo page */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #4ecdc4;
+            margin-top: 30px;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .example-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fff;
+        }
+        
+        .example-fortune h3 {
+            margin-top: 0;
+            color: #ff6b6b;
+        }
+        
+        .error {
+            font-family: monospace;
+            color: #e63946;
+            padding: 10px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid #e63946;
+        }
+        
+        .wisdom {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 10px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        .button:hover {
+            background-color: #3dbbb4;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error Message Fortune Cookies</h1>
+        <p class="tagline">Turn your coding disasters into ancient wisdom</p>
+        
+        <p>This is a demo page for the Error Message Fortune Cookies library. The library transforms boring error messages into humorous fortune cookie wisdom.</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li><strong>20 Fortune Styles</strong>: Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, Poetic, Zen Meditation, Shakespearean Drama, Film Noir Detective, Sci-Fi Technobabble, Pirate Speak, Cowboy Western, Superhero Comic, Medieval Fantasy, B-Movie Horror, Social Media Influencer, Legal Jargon, Cooking Recipe, and Sports Commentary</li>
+            <li><strong>4 Visual Themes</strong>: Zen, Chaos, Dark, and Light themes to match your application</li>
+            <li><strong>Animated Cookie</strong>: Engaging crack animation with fortune reveal</li>
+            <li><strong>Sharing Options</strong>: Generate images, copy links, and share to social media</li>
+            <li><strong>Favorites & History</strong>: Save and revisit your favorite fortunes</li>
+            <li><strong>Fully Accessible</strong>: Screen reader support and keyboard navigation</li>
+            <li><strong>Multiple Integration Options</strong>: JavaScript API, Custom Element, or iframe embed</li>
+        </ul>
+        
+        <h2>Example Fortunes</h2>
+        <div class="example-grid">
+            <div class="example-card">
+                <div class="example-fortune confucius">
+                    <h3>Error Confucius</h3>
+                    <div class="fortune-content">
+                        <p class="error">TypeError: Cannot read property 'length' of undefined</p>
+                        <p class="wisdom">Confucius say: Man who try to measure length of nothing find himself coming up short.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-fortune haiku">
+                    <h3>Error Haiku</h3>
+                    <div class="fortune-content">
+                        <p class="error">ReferenceError: x is not defined</p>
+                        <p class="wisdom">Variable unknown<br>
+                        Shadows in empty namespace<br>
+                        Reference to void</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-fortune zen">
+                    <h3>Zen Meditation</h3>
+                    <div class="fortune-content">
+                        <p class="error">RangeError: Maximum call stack size exceeded</p>
+                        <p class="wisdom">In the silence between keystrokes, we find the path by noticing where we stumble. The solution will appear when the mind is still.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-fortune tarot">
+                    <h3>Syntax Error Tarot</h3>
+                    <div class="fortune-content">
+                        <p class="error">SyntaxError: Unexpected token {</p>
+                        <p class="wisdom">The Curly Brace appears in reverse position. A structure in your life is opening before it should. Patience with syntax will reveal the proper path.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <div class="example-fortune shakespeare">
+                    <h3>Shakespearean Drama</h3>
+                    <div class="fortune-content">
+                        <p class="error">TypeError: null is not an object</p>
+                        <p class="wisdom">Alas, what tragedy befalls thy code! The types doth protest too much, methinks. What light through yonder console breaks? It is the solution, and wisdom is the sun.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <div class="example-fortune noir">
+                    <h3>Film Noir Detective</h3>
+                    <div class="fortune-content">
+                        <p class="error">SyntaxError: missing ) after argument list</p>
+                        <p class="wisdom">The syntax was broken, like my spirit after a three-day debugging bender. I'll fix it, but it won't be pretty. Nothing in this town ever is.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://github.com/avifenesh/Error-fun" class="button">View on GitHub</a>
+        
+        <footer>
+            <p>&copy; 2025 Error Message Fortune Cookies | <a href="https://github.com/avifenesh/Error-fun">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
