@@ -35,9 +35,18 @@ jobs:
 
       - name: Update CSS path in index.html
         run: sed -i 's|./src/css/main.css|./main.css|g' dist/index.html
+        
+      - name: Update CSS path in try.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/try.html
 
       - name: Copy try.html to dist
         run: cp try.html dist/
+        
+      - name: Copy examples directory to dist
+        run: cp -r examples dist/ || true
+        
+      - name: Copy docs directory to dist
+        run: cp -r docs dist/ || true
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
