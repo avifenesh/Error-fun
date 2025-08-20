@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Fortune Cookies | Transform Errors into Wisdom</title>
+    <meta name="description" content="Transform boring error messages into hilarious fortune cookie wisdom with our interactive tool.">
+    <link rel="stylesheet" href="./src/css/redesign.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Error Fortune Cookies">
+    <meta property="og:description" content="Transform boring error messages into hilarious fortune cookie wisdom">
+    <meta property="og:image" content="https://avifenesh.github.io/Error-fun/og-image.jpg">
+    <meta property="og:url" content="https://avifenesh.github.io/Error-fun/">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <h1>Error Fortune Cookies</h1>
+            <p class="hero-tagline">Transform boring error messages into ancient wisdom</p>
+            <div class="hero-actions">
+                <a href="#transformer" class="button">Try It Now</a>
+                <a href="#about" class="button outline secondary">Learn More</a>
+            </div>
+            
+            <!-- Cookie Animation Preview -->
+            <div class="cookie-animation">
+                <div class="cookie">
+                    <div class="cookie-top"></div>
+                    <div class="cookie-bottom"></div>
+                    <div class="fortune-paper"></div>
+                    <div class="cookie-chip" style="top: 30%; left: 25%"></div>
+                    <div class="cookie-chip" style="top: 40%; left: 60%"></div>
+                    <div class="cookie-chip" style="top: 60%; left: 35%"></div>
+                    <div class="cookie-chip" style="top: 70%; left: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Transformer Section -->
+        <section id="transformer" class="section">
+            <div class="container">
+                <h2>Transform Your Error</h2>
+                <p>Paste your error message below and watch it transform into fortune cookie wisdom.</p>
+                
+                <div class="card">
+                    <form id="error-form">
+                        <div class="form-group">
+                            <label for="error-message" class="form-label">Error Message</label>
+                            <textarea id="error-message" class="form-control" placeholder="Paste your error message here... (e.g. TypeError: Cannot read property 'length' of undefined)" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Fortune Style</label>
+                            <div class="style-selector">
+                                <label class="style-option active">
+                                    <input type="radio" name="style" value="confucius" checked>
+                                    <div class="style-icon">🧙‍♂️</div>
+                                    <div class="style-name">Confucius</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="haiku">
+                                    <div class="style-icon">🍃</div>
+                                    <div class="style-name">Haiku</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="tarot">
+                                    <div class="style-icon">🔮</div>
+                                    <div class="style-name">Tarot</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="blame">
+                                    <div class="style-icon">👽</div>
+                                    <div class="style-name">Blame</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="motivational">
+                                    <div class="style-icon">💪</div>
+                                    <div class="style-name">Motivational</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="techSupport">
+                                    <div class="style-icon">🖥️</div>
+                                    <div class="style-name">Tech Support</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="poetic">
+                                    <div class="style-icon">📜</div>
+                                    <div class="style-name">Poetic</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="zen">
+                                    <div class="style-icon">☯️</div>
+                                    <div class="style-name">Zen</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="shakespeare">
+                                    <div class="style-icon">🎭</div>
+                                    <div class="style-name">Shakespeare</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="filmNoir">
+                                    <div class="style-icon">🕵️</div>
+                                    <div class="style-name">Film Noir</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="sciFi">
+                                    <div class="style-icon">🚀</div>
+                                    <div class="style-name">Sci-Fi</div>
+                                </label>
+                                <label class="style-option">
+                                    <input type="radio" name="style" value="pirate">
+                                    <div class="style-icon">🏴‍☠️</div>
+                                    <div class="style-name">Pirate</div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Theme</label>
+                            <div class="theme-selector">
+                                <label class="theme-option theme-zen active">
+                                    <input type="radio" name="theme" value="zen" checked>
+                                    <span class="sr-only">Zen Theme</span>
+                                </label>
+                                <label class="theme-option theme-chaos">
+                                    <input type="radio" name="theme" value="chaos">
+                                    <span class="sr-only">Chaos Theme</span>
+                                </label>
+                                <label class="theme-option theme-dark">
+                                    <input type="radio" name="theme" value="dark">
+                                    <span class="sr-only">Dark Theme</span>
+                                </label>
+                                <label class="theme-option theme-light">
+                                    <input type="radio" name="theme" value="light">
+                                    <span class="sr-only">Light Theme</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="button">Crack Fortune Cookie</button>
+                    </form>
+                </div>
+                
+                <!-- Fortune Display -->
+                <div id="fortune-display" class="fortune-container" style="display: none;">
+                    <div class="cookie-animation">
+                        <div class="cookie">
+                            <div class="cookie-top"></div>
+                            <div class="cookie-bottom"></div>
+                            <div class="fortune-paper"></div>
+                            <div class="cookie-chip" style="top: 30%; left: 25%"></div>
+                            <div class="cookie-chip" style="top: 40%; left: 60%"></div>
+                            <div class="cookie-chip" style="top: 60%; left: 35%"></div>
+                            <div class="cookie-chip" style="top: 70%; left: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="error-message">
+                        <code id="original-error">TypeError: Cannot read property 'length' of undefined</code>
+                    </div>
+                    
+                    <div class="fortune-content">
+                        <p class="fortune-text" id="fortune-text">Confucius say: Man who try to measure length of nothing find himself coming up short.</p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="favorite-button" class="action-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Add to Favorites
+                        </button>
+                        <button id="copy-image-button" class="action-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy as Image
+                        </button>
+                        <button id="copy-link-button" class="action-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            Copy Link
+                        </button>
+                        <button id="download-button" class="action-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download
+                        </button>
+                        <div class="dropdown">
+                            <button id="share-button" class="action-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                                Share
+                            </button>
+                            <div class="dropdown-menu" id="share-dropdown" style="display: none;">
+                                <a href="#" id="share-twitter" class="dropdown-item">Twitter</a>
+                                <a href="#" id="share-facebook" class="dropdown-item">Facebook</a>
+                                <a href="#" id="share-linkedin" class="dropdown-item">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="section" style="background-color: var(--off-white);">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>20 Fortune Styles</h3>
+                        <p>Choose from Confucius, Haiku, Tarot, Blame, Motivational, Tech Support, Poetic, Zen, Shakespeare, Film Noir, Sci-Fi, Pirate, Western, Superhero, Fantasy, B-Movie, Influencer, Legal, Recipe, and Sports Commentary styles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>4 Visual Themes</h3>
+                        <p>Customize your experience with Zen, Chaos, Dark, and Light themes to match your mood or application.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>Animated Cookie</h3>
+                        <p>Watch as your fortune cookie cracks open to reveal the wisdom hidden inside with our engaging animations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📤</div>
+                        <h3>Sharing Options</h3>
+                        <p>Generate images, copy links, and share your fortunes directly to social media platforms.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Favorites & History</h3>
+                        <p>Save your favorite fortunes and revisit your fortune history anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">♿</div>
+                        <h3>Fully Accessible</h3>
+                        <p>Designed with accessibility in mind, including screen reader support and keyboard navigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Examples Section -->
+        <section id="examples" class="section">
+            <div class="container">
+                <h2>Fortune Examples</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-style">Confucius</div>
+                        <div class="error-message">
+                            <code>TypeError: Cannot read property 'length' of undefined</code>
+                        </div>
+                        <div class="fortune-content">
+                            <p class="fortune-text">Confucius say: Man who try to measure length of nothing find himself coming up short.</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-style">Haiku</div>
+                        <div class="error-message">
+                            <code>ReferenceError: x is not defined</code>
+                        </div>
+                        <div class="fortune-content">
+                            <p class="fortune-text">Variable unknown<br>Shadows in empty namespace<br>Reference to void</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-style">Shakespeare</div>
+                        <div class="error-message">
+                            <code>SyntaxError: Unexpected token {</code>
+                        </div>
+                        <div class="fortune-content">
+                            <p class="fortune-text">Alas, what tragedy befalls thy code! The brackets fall in disarray, like soldiers fleeing from the battlefield. What light through yonder console breaks? It is the solution, and wisdom is the sun.</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-style">Film Noir</div>
+                        <div class="error-message">
+                            <code>RangeError: Maximum call stack size exceeded</code>
+                        </div>
+                        <div class="fortune-content">
+                            <p class="fortune-text">The error hit me like a freight train on a cold Monday morning. This error's got more layers than a year-old onion. Another day, another bug. That's just how it goes in this business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Integration Section -->
+        <section id="integration" class="section" style="background-color: var(--off-white);">
+            <div class="container">
+                <h2>Easy Integration</h2>
+                <div class="integration-options">
+                    <div class="integration-card">
+                        <h3>JavaScript API</h3>
+                        <pre><code>// Initialize
+ErrorFortune.init();
+
+// Generate a fortune
+ErrorFortune.crack("TypeError: Cannot read property 'length' of undefined", {
+  style: "confucius",
+  theme: "zen",
+  target: "fortune-container"
+});</code></pre>
+                        <a href="#" class="button outline">View API Docs</a>
+                    </div>
+                    <div class="integration-card">
+                        <h3>Custom Element</h3>
+                        <pre><code>&lt;error-fortune 
+  message="ReferenceError: x is not defined" 
+  style="haiku" 
+  theme="dark"&gt;
+&lt;/error-fortune&gt;</code></pre>
+                        <a href="#" class="button outline">View Element Docs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Error Fortune Cookies</h2>
+                <p>Error Message Fortune Cookies is a lightweight JavaScript library that turns frustrating error messages into entertaining fortune cookie wisdom. Whether you're building a developer tool, creating a fun error page, or just want to add some humor to your application, this library provides a delightful way to present errors.</p>
+                <p>The project is open source and available on GitHub under the MIT license.</p>
+                <div class="about-actions">
+                    <a href="https://github.com/avifenesh/Error-fun" class="button">View on GitHub</a>
+                    <a href="https://www.npmjs.com/package/error-fortune-cookies" class="button secondary">NPM Package</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- History & Favorites Section -->
+        <section id="saved" class="section" style="background-color: var(--off-white);">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="history">History</button>
+                    <button class="tab-button" data-tab="favorites">Favorites</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="history-tab" class="tab-pane active">
+                        <div id="history-container">
+                            <!-- History items will be dynamically added here -->
+                            <p class="empty-message">No fortune history yet.</p>
+                        </div>
+                    </div>
+                    <div id="favorites-tab" class="tab-pane">
+                        <div id="favorites-container">
+                            <!-- Favorite items will be dynamically added here -->
+                            <p class="empty-message">No favorites yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Error Fortune Cookies</h3>
+                    <p>Transform errors into wisdom</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Examples</a></li>
+                            <li><a href="#">Integration Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://github.com/avifenesh/Error-fun">GitHub</a></li>
+                            <li><a href="#">Contributing</a></li>
+                            <li><a href="#">Code of Conduct</a></li>
+                            <li><a href="#">Report an Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Error Fortune Cookies | <a href="https://github.com/avifenesh/Error-fun/blob/main/LICENSE">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="./src/js/index.js" type="module"></script>
+    
+    <script>
+        // Simple animation for the hero cookie
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const heroCookie = document.querySelector('.hero .cookie');
+                heroCookie.classList.add('cracked');
+            }, 1000);
+            
+            // Style option selection
+            const styleOptions = document.querySelectorAll('.style-option');
+            styleOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    styleOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Theme option selection
+            const themeOptions = document.querySelectorAll('.theme-option');
+            themeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    themeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Tab switching
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(`${tabName}-tab`).classList.add('active');
+                });
+            });
+            
+            // Form submission (for demo purposes)
+            const errorForm = document.getElementById('error-form');
+            const fortuneDisplay = document.getElementById('fortune-display');
+            
+            errorForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                fortuneDisplay.style.display = 'block';
+                fortuneDisplay.classList.add('loading');
+                
+                // Get form values
+                const errorMessage = document.getElementById('error-message').value;
+                const style = document.querySelector('input[name="style"]:checked').value;
+                const theme = document.querySelector('input[name="theme"]:checked').value;
+                
+                // Update display
+                document.getElementById('original-error').textContent = errorMessage;
+                
+                // Simulate loading
+                setTimeout(() => {
+                    fortuneDisplay.classList.remove('loading');
+                    
+                    // Animate cookie
+                    const cookie = fortuneDisplay.querySelector('.cookie');
+                    cookie.classList.add('cracked');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
