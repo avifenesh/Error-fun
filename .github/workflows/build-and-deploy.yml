@@ -45,6 +45,9 @@ jobs:
       - name: Copy try.html to dist
         run: cp try.html dist/
         
+      - name: Copy test.html to dist
+        run: cp test.html dist/
+        
       - name: Copy examples directory to dist
         run: cp -r examples dist/ || true
         
