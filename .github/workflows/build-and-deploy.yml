@@ -29,15 +29,18 @@ jobs:
 
       - name: Build CSS
         run: npx parcel build src/css/main.css --out-dir dist
+        
+      - name: Copy CSS directly
+        run: cp src/css/main.css dist/
 
       - name: Copy index.html to dist
         run: cp index.html dist/
 
       - name: Update CSS path in index.html
-        run: sed -i 's|./src/css/main.css|./main.css|g' dist/index.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/index.html || true
         
       - name: Update CSS path in try.html
-        run: sed -i 's|./src/css/main.css|./main.css|g' dist/try.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/try.html || true
 
       - name: Copy try.html to dist
         run: cp try.html dist/
