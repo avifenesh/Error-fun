@@ -86,10 +86,6 @@ const ErrorFortune = (function() {
    * Add skip link for accessibility
    */
   function addSkipLink() {
-    // Defensive check for document.body, which can be an issue in some test environments
-    if (!document.body) {
-      return;
-    }
     const skipLink = document.createElement('a');
     skipLink.href = '#fortune-display';
     skipLink.className = 'skip-link';
@@ -285,13 +281,6 @@ const ErrorFortune = (function() {
     elements.jsApiDisplay = document.getElementById('js-api-display');
     elements.historyContainer = document.getElementById('history-container');
     elements.favoritesContainer = document.getElementById('favorites-container');
-
-    // Homepage UI elements
-    elements.heroCookie = document.querySelector('.hero .cookie');
-    elements.styleOptions = document.querySelectorAll('.style-option');
-    elements.themeOptions = document.querySelectorAll('.theme-option');
-    elements.tabButtons = document.querySelectorAll('.tab-button');
-    elements.tabPanes = document.querySelectorAll('.tab-pane');
   }
   
   /**
@@ -303,9 +292,6 @@ const ErrorFortune = (function() {
       elements.form.addEventListener('submit', handleFormSubmit);
     }
     
-    // Homepage UI events
-    bindHomepageUIEvents();
-
     // Action buttons
     if (elements.fortuneActions) {
       const copyImageBtn = document.getElementById('copy-image');
@@ -414,8 +400,7 @@ const ErrorFortune = (function() {
     crack(errorMessage, {
       style,
       theme,
-      target: 'fortune-display',
-      nonce: Date.now() // Cache-busting nonce
+      target: 'fortune-display'
     });
   }
   
@@ -1480,56 +1465,6 @@ const ErrorFortune = (function() {
     
     reader.readAsText(file);
   }
-  /**
-   * Binds UI events for the homepage demo.
-   */
-  function bindHomepageUIEvents() {
-    // Simple animation for the hero cookie
-    if (elements.heroCookie) {
-      setTimeout(() => {
-        elements.heroCookie.classList.add('cracked');
-      }, 1000);
-    }
-
-    // Style option selection
-    if (elements.styleOptions) {
-      elements.styleOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          elements.styleOptions.forEach(opt => opt.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    }
-
-    // Theme option selection
-    if (elements.themeOptions) {
-      elements.themeOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          elements.themeOptions.forEach(opt => opt.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    }
-
-    // Tab switching
-    if (elements.tabButtons && elements.tabPanes) {
-      elements.tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const tabName = this.getAttribute('data-tab');
-
-          elements.tabButtons.forEach(btn => btn.classList.remove('active'));
-          elements.tabPanes.forEach(pane => pane.classList.remove('active'));
-
-          this.classList.add('active');
-          document.getElementById(`${tabName}-tab`).classList.add('active');
-        });
-      });
-    }
-
-    // Note: The form submission part of the original inline script is already
-    // handled by the main `handleFormSubmit` function. The inline script had a
-    // simplified demo version which is not needed, as the main logic is more robust.
-  }
 
   // Public API
   return {
@@ -1544,8 +1479,8 @@ const ErrorFortune = (function() {
   };
 })();
 
-// Auto-initialize if in browser context, but not in a test environment
-if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'test') {
+// Auto-initialize if in browser context
+if (typeof window !== 'undefined') {
   window.ErrorFortune = ErrorFortune;
   
   // Initialize when DOM is ready

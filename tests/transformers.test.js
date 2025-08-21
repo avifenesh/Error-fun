@@ -165,7 +165,7 @@ describe('Fortune Transformers', () => {
       const hasShakespeareanTerms = [
         'thou', 'thy', 'doth', 'hath', 'alas',
         'methinks', 'shall', 'ere', 'whence', 'foul'
-      ].some(term => result.toLowerCase().includes(term));
+      ].some(term => result.includes(term));
       
       expect(hasShakespeareanTerms).toBe(true);
     });
@@ -181,8 +181,7 @@ describe('Fortune Transformers', () => {
       const result = filmNoirTransformer(testError);
       const hasNoirTerms = [
         'dark', 'night', 'dame', 'trouble', 'coffee',
-        'fix', 'case', 'detective', 'mystery', 'shadow',
-        'bug', 'console', 'semicolon'
+        'fix', 'case', 'detective', 'mystery', 'shadow'
       ].some(term => result.toLowerCase().includes(term));
       
       expect(hasNoirTerms).toBe(true);

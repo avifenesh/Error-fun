@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -25,14 +24,35 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build application
-        run: npm run build
+      - name: Build
+        run: npm run build:all
+
+      - name: Build CSS
+        run: npx parcel build src/css/main.css --out-dir dist
+
+      - name: Copy CSS directly
+        run: cp src/css/main.css dist/
+
+      - name: Copy index.html to dist
+        run: cp index.html dist/
+
+      - name: Update CSS path in index.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/index.html || true
+
+      - name: Update CSS path in try.html
+        run: sed -i 's|./src/css/main.css|./main.css|g' dist/try.html || true
+
+      - name: Copy try.html to dist
+        run: cp try.html dist/
+
+      - name: Copy test.html to dist
+        run: cp test.html dist/
+
+      - name: Copy examples directory to dist
+        run: cp -r examples dist/ || true
         
-      - name: Copy static assets to dist
-        run: |
-          cp favicon.ico dist/
-          cp -r examples dist/
-          cp -r docs dist/
+      - name: Copy docs directory to dist
+        run: cp -r docs dist/ || true
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
@@ -41,3 +61,4 @@ jobs:
           folder: dist
           branch: gh-pages
           clean: true
+          force: true

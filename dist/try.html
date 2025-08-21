@@ -1,2 +1,882 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Try Error Fortune Cookies | Interactive Transformer</title><meta name="description" content="Transform your error messages into creative wisdom with our interactive tool."><link rel="stylesheet" href="/main.01141a0a.css"><link rel="icon" href="/favicon.0a2d10e1.ico" type="image/x-icon"><meta property="og:title" content="Try Error Fortune Cookies"><meta property="og:description" content="Transform your error messages into creative wisdom"><meta property="og:image" content="https://avifenesh.github.io/Error-fun/og-image.jpg"><meta property="og:url" content="https://avifenesh.github.io/Error-fun/try.html"><meta name="twitter:card" content="summary_large_image"></head><body>  <a href="#main-content" class="skip-link">Skip to main content</a>  <header class="hero" style="padding:var(--space-lg) 0;"> <div class="container"> <h1>Error Fortune Transformer</h1> <p class="hero-tagline">Transform your error messages into creative wisdom</p> <div class="hero-actions"> <a href="/index.html" class="button outline">Back to Home</a> </div> </div> </header>  <main id="main-content">  <section id="transformer" class="section"> <div class="container"> <div class="card"> <div class="transformer-container"> <div class="transformer-input"> <h3>Enter Your Error Message</h3> <textarea id="error-input" class="form-control" placeholder="Paste your error message here...
-Example: TypeError: Cannot read property 'length' of undefined"></textarea> <h3>Choose Transformer Style</h3> <div class="style-selector"> <label class="active style-option"> <input type="radio" name="style" value="confucius" checked> <div class="style-icon">🧙‍♂️</div> <div class="style-name">Confucius</div> </label> <label class="style-option"> <input type="radio" name="style" value="haiku"> <div class="style-icon">🍃</div> <div class="style-name">Haiku</div> </label> <label class="style-option"> <input type="radio" name="style" value="tarot"> <div class="style-icon">🔮</div> <div class="style-name">Tarot</div> </label> <label class="style-option"> <input type="radio" name="style" value="blame"> <div class="style-icon">👽</div> <div class="style-name">Blame</div> </label> <label class="style-option"> <input type="radio" name="style" value="zen"> <div class="style-icon">☯️</div> <div class="style-name">Zen</div> </label> <label class="style-option"> <input type="radio" name="style" value="motivational"> <div class="style-icon">💪</div> <div class="style-name">Motivational</div> </label> <label class="style-option"> <input type="radio" name="style" value="shakespeare"> <div class="style-icon">🎭</div> <div class="style-name">Shakespeare</div> </label> <label class="style-option"> <input type="radio" name="style" value="filmNoir"> <div class="style-icon">🕵️</div> <div class="style-name">Film Noir</div> </label> <label class="style-option"> <input type="radio" name="style" value="sciFi"> <div class="style-icon">🚀</div> <div class="style-name">Sci-Fi</div> </label> <label class="style-option"> <input type="radio" name="style" value="pirate"> <div class="style-icon">🏴‍☠️</div> <div class="style-name">Pirate</div> </label> <label class="style-option"> <input type="radio" name="style" value="western"> <div class="style-icon">🤠</div> <div class="style-name">Western</div> </label> <label class="style-option"> <input type="radio" name="style" value="superhero"> <div class="style-icon">🦸</div> <div class="style-name">Superhero</div> </label> <label class="style-option"> <input type="radio" name="style" value="fantasy"> <div class="style-icon">🧙</div> <div class="style-name">Fantasy</div> </label> <label class="style-option"> <input type="radio" name="style" value="bMovie"> <div class="style-icon">👾</div> <div class="style-name">B-Movie</div> </label> <label class="style-option"> <input type="radio" name="style" value="influencer"> <div class="style-icon">📱</div> <div class="style-name">Influencer</div> </label> <label class="style-option"> <input type="radio" name="style" value="legal"> <div class="style-icon">⚖️</div> <div class="style-name">Legal</div> </label> <label class="style-option"> <input type="radio" name="style" value="recipe"> <div class="style-icon">🍳</div> <div class="style-name">Recipe</div> </label> <label class="style-option"> <input type="radio" name="style" value="sports"> <div class="style-icon">🏆</div> <div class="style-name">Sports</div> </label> </div> <button id="transform-button" class="button">Transform Error</button> </div> <div class="transformer-output"> <h3>Your Fortune</h3> <div id="result" class="result"> <div class="empty-message">Enter an error message and choose a style to see your fortune...</div> </div> </div> </div> </div> </div> </section> </main>  <footer class="footer"> <div class="container"> <div class="footer-content"> <div class="footer-logo"> <h3>Error Fortune Cookies</h3> <p>Transform errors into wisdom</p> </div> <div class="footer-links"> <div class="footer-links-column"> <h4>Resources</h4> <ul> <li><a href="/index.html">Home</a></li> <li><a href="/index.html#features">Features</a></li> <li><a href="/index.html#examples">Examples</a></li> <li><a href="/index.html#integration">Integration</a></li> </ul> </div> <div class="footer-links-column"> <h4>Community</h4> <ul> <li><a href="https://github.com/avifenesh/Error-fun">GitHub</a></li> <li><a href="https://github.com/avifenesh/Error-fun/blob/main/CONTRIBUTING.md">Contributing</a></li> <li><a href="https://github.com/avifenesh/Error-fun/issues">Report an Issue</a></li> </ul> </div> </div> </div> <div class="footer-bottom"> <p>&copy; 2025 Error Fortune Cookies | <a href="https://github.com/avifenesh/Error-fun/blob/main/LICENSE">MIT License</a></p> </div> </div> </footer>  <div id="toast-container" class="toast-container"></div> <script>function e(e){const t=e.split(":")[0]||"Error",o=(e.split(":")[1],["Confucius say: Man who {action} {subject} find himself {consequence}.","Ancient wisdom tell us: Those who {action} will surely {consequence}.","Path to enlightenment never {action}. Wise developer {alternative}.","In garden of code, {subject} cannot grow without {requirement}.","Confucius say: {errorType} today leads to wisdom tomorrow, but only if you {solution}."]),r=["try to measure length of nothing","seek undefined variables","chase null references","ignore compiler warnings","skip writing tests","rush through debugging"],a=["undefined object","missing property","broken code","syntax error","runtime exception"],n=["coming up short","lost in empty space","with many bugs to fix","debugging until sunrise","learning valuable lesson"],i=["checks for null before proceeding","writes tests before code","seeks help from community","consults ancient documentation","meditates on error message"],s=["proper initialization","careful attention to detail","defensive programming","type checking","error handling"],h=["learn from mistakes","add proper error handling","write more tests","seek wisdom of senior developer","take time to understand root cause"];let l=o[Math.floor(Math.random()*o.length)];return l=(l=(l=(l=(l=(l=(l=l.replace("{action}",r[Math.floor(Math.random()*r.length)])).replace("{subject}",a[Math.floor(Math.random()*a.length)])).replace("{consequence}",n[Math.floor(Math.random()*n.length)])).replace("{alternative}",i[Math.floor(Math.random()*i.length)])).replace("{requirement}",s[Math.floor(Math.random()*s.length)])).replace("{solution}",h[Math.floor(Math.random()*h.length)])).replace("{errorType}",t)}function t(e){e.split(":")[0],e.split(":")[1];const t=["Variable unknown","Undefined value","Syntax breaks the flow","Function returns void","Reference not found","Silent exception"],o=["Shadows in empty namespace","Code refuses to compile","Logic twisted into knots","Algorithms falter, pause","Errors hiding in plain sight","Brackets missing their partners"],r=["Debug through the night","Stack trace tells no lies","Restart and try again","Wisdom comes from pain","Tests reveal the truth","Time to take a walk"];return`${t[Math.floor(Math.random()*t.length)]}<br>${o[Math.floor(Math.random()*o.length)]}<br>${r[Math.floor(Math.random()*r.length)]}`}function o(e){const t=["This error is clearly due to a cosmic ray flipping a bit in memory. Not your fault at all!","Mercury is in retrograde, affecting all pointer arithmetic in your timezone.","Your code is perfect. It's the laws of physics that are wrong today.","A temporal anomaly in the server room has caused your variables to time travel.","Quantum fluctuations in the CPU have created an alternate reality where this code doesn't work.","Your keyboard has been secretly autocorrecting your perfect code into errors.","The alignment of Wi-Fi waves with the office building is creating interference patterns in your logic.","The compiler is clearly in a bad mood today. Try again when it's feeling better.","Your code worked fine until someone made eye contact with the server.","The error is actually a feature if you look at it from a non-Euclidean perspective."];return t[Math.floor(Math.random()*t.length)]}function r(e){e.split(":")[0];const t=["The Undefined Variable","The Null Object","The Missing Reference","The Broken Syntax","The Stack Overflow","The Infinite Loop","The Boundary Crosser","The Type Mismatch"],o=["upright","reverse"],r={upright:["This suggests a clear path forward once you address the fundamental issue.","You are facing a challenge that requires careful attention to detail.","A solution exists but may require looking at your code from a new perspective."],reverse:["This indicates hidden complexity that isn't immediately obvious.","You may be overlooking something simple in your pursuit of a complex solution.","The true source of your problem lies elsewhere in your code."]},a=["Patience with syntax will reveal the proper path.","Consider stepping away and returning with fresh eyes.","The documentation holds the key to your salvation.","Seek wisdom from those who have faced this error before.","A careful review of your types will bring harmony."],n=t[Math.floor(Math.random()*t.length)],i=o[Math.floor(Math.random()*o.length)];return`The card ${n} appears in ${i} position. ${r[i][Math.floor(Math.random()*r[i].length)]} ${a[Math.floor(Math.random()*a.length)]}`}function a(e){e.split(":")[0];const t=["In the silence between keystrokes","Breathe in the error, breathe out the solution","The code that breaks teaches us the most","When the program crashes, listen closely","The bug is not your enemy, but your teacher"],o=["we find the path by noticing where we stumble","errors illuminate the way forward","patience reveals what haste conceals","the obstacle becomes the way","form and structure create meaning"],r=["Return to your code with fresh eyes.","The solution will appear when the mind is still.","Each error brings you closer to understanding.","This moment of confusion will pass.","Embrace the error as part of the journey."];return`${t[Math.floor(Math.random()*t.length)]}, ${o[Math.floor(Math.random()*o.length)]}. ${r[Math.floor(Math.random()*r.length)]}`}function n(e){e.split(":")[0];const t=["PERSISTENCE","DEBUGGING","RESILIENCE","GROWTH","CHALLENGE"],o=["It's not about avoiding errors; it's about how elegantly you handle them.","The error message is the first step on the road to a solution.","Behind every great program is a developer who refused to give up on a stubborn bug.","Errors are just the universe's way of telling you there's a more creative solution.","The difference between a junior and senior developer is how they react to the same error message."];return`<strong>${t[Math.floor(Math.random()*t.length)]}</strong><br><br>${o[Math.floor(Math.random()*o.length)]}`}function i(e){e.split(":")[0];const t=["Alas, what tragedy befalls thy code!","O woeful error, what sorrow thou bringest!","What manner of beast is this error I see before me?","Hark! A most grievous fault appears!","To err or not to err, that is the question."],o=["The types doth protest too much, methinks.","What's in a type? That which we call undefined by any other name would still crash as deep.","This error, like a poison'd chalice, brings ruin to thy program's lips.","Thy syntax hath more gaps than a peasant's teeth.","The fault, dear programmer, is not in our stars, but in our code."],r=["Shall we proceed with the debugging most foul?","What light through yonder console breaks? It is the solution, and wisdom is the sun.","Parting is such sweet sorrow, that I shall debug 'til it be morrow.","Now is the winter of our discontent made glorious summer by this fixed bug.","All's well that ends well, once thy error is vanquished."];return`${t[Math.floor(Math.random()*t.length)]} ${o[Math.floor(Math.random()*o.length)]} ${r[Math.floor(Math.random()*r.length)]}`}function s(e){e.split(":")[0];const t=["It was a dark and stormy night when the error crept in.","The bug slipped into my code like a dame with a secret.","I knew this function was trouble the moment I laid eyes on it.","The console was as black as my coffee and twice as bitter.","The error hit me like a freight train on a cold Monday morning."],o=["Types don't lie, kid. But programmers? They lie all the time.","The type was all wrong, like a penguin at a desert party.","I've seen some type mismatches in my day, but this one took the cake.","This error's got more layers than a year-old onion.","Bugs don't just happen. Someone's always responsible."],r=["I'll fix it, but it won't be pretty. Nothing in this town ever is.","Some errors you fix. Others... they fix you.","In the end, it's always the semicolons that get you.","I'll solve this case if it's the last thing I do.","Another day, another bug. That's just how it goes in this business."];return`${t[Math.floor(Math.random()*t.length)]} ${o[Math.floor(Math.random()*o.length)]} ${r[Math.floor(Math.random()*r.length)]}`}function h(e){e.split(":")[0];const t=["Alert! Quantum fluctuation detected in the code matrix!","Captain's log, stardate 43.7: We've encountered an anomaly in the program continuum.","The code's dilithium crystals are experiencing a catastrophic cascade failure.","Warning: Temporal distortion detected in the algorithmic subspace.","The neural network's synaptic processors have encountered a logic paradox."],o=["The type converters have failed to properly modulate the tachyon emissions.","A dimensional rift has caused quantum entanglement between incompatible data types.","The variable's molecular cohesion is breaking down at the subatomic level.","Our sensors detect a disturbance in the code-force.","The main deflector dish cannot compensate for this level of programming entropy."],r=["Recommend recalibrating the primary code arrays and reinitializing the debugging sequence.","We must reverse the polarity of the neutron flow to restore system functionality.","Only by realigning the quantum harmonics can we hope to resolve this paradox.","Initiating emergency protocol: Ctrl-Alt-Delete Prime Directive.","Perhaps we can bypass the main power coupling and route around the damaged code sectors."];return`${t[Math.floor(Math.random()*t.length)]} ${o[Math.floor(Math.random()*o.length)]} ${r[Math.floor(Math.random()*r.length)]}`}function l(e){e.split(":")[0];const t=["Shiver me timbers!","Blimey! What have ye done to me code?","Arrr! There be a problem with yer program, matey!","Avast ye! There be bugs in these waters!","Yo ho ho! A troublesome error has been spotted off the starboard bow!"],o=["Ye tried to make a string walk the plank with numbers, ye scurvy dog!","Yer types be mismatched like a one-legged pirate with two peg legs!","The type ye seek be buried with the rest of the treasure, it be!","Ye can't reference what ain't there, ye addlebrained swabbie!","This error be giving me more grief than a plank-walking ceremony!"],r=["Fix it quick, or it's the plank for ye!","Best be debuggin' before the tide comes in!","Splice the mainbrace and fix the code, or face the captain's wrath!","May the winds of good fortune help ye find the bug, or ye be marooned!","Batten down the hatches and prepare to debug, me hearty!"];return`${t[Math.floor(Math.random()*t.length)]} ${o[Math.floor(Math.random()*o.length)]} ${r[Math.floor(Math.random()*r.length)]}`}function c(e){e.split(":")[0];const t=["Whoa there, partner!","Well, I'll be a rattlesnake's uncle!","Hold your horses, cowboy!","This code's got more problems than a one-legged horse in a kickin' contest.","Looks like we got ourselves a situation here."],o=["You're tryin' to fit a square peg in a round hole with them types.","Them types are more mixed up than a tumbleweed in a tornado.","You can't make a silk purse outta a sow's ear, and you sure can't make that type work here.","That reference is as gone as last year's tumbleweed.","Your syntax is crookeder than a wagon trail over the Rockies."],r=["Best saddle up and fix it 'fore sundown.","Time to round up them bugs and drive 'em outta your code.","Ain't no use cryin' over spilt milk. Just clean up your code and move on.","You best get to fixin' this faster than a jackrabbit on a hot griddle.","Don't worry, even the best cowboys fall off their horse sometimes."];return`${t[Math.floor(Math.random()*t.length)]} ${o[Math.floor(Math.random()*o.length)]} ${r[Math.floor(Math.random()*r.length)]}`}function u(){const u=document.getElementById("error-input").value.trim(),d=document.querySelector('input[name="style"]:checked').value,m=document.getElementById("result");if(!u)return void(m.innerHTML='<div class="error-message">Please enter an error message</div>');let g;switch(d){case"confucius":g=e(u);break;case"haiku":g=t(u);break;case"tarot":g=r(u);break;case"blame":g=o(u);break;case"zen":g=a(u);break;case"motivational":g=n(u);break;case"shakespeare":g=i(u);break;case"filmNoir":g=s(u);break;case"sciFi":g=h(u);break;case"pirate":g=l(u);break;case"western":g=c(u);break;default:g=e(u)}m.innerHTML=`\n                <div class="error-message">\n                    <code>${u}</code>\n                </div>\n                <div class="fortune-content">\n                    <p class="fortune-text">${g}</p>\n                </div>\n            `}document.addEventListener("DOMContentLoaded",function(){document.getElementById("transform-button").addEventListener("click",u);const e=document.querySelectorAll(".style-option");e.forEach(t=>{t.addEventListener("click",function(){e.forEach(e=>e.classList.remove("active")),this.classList.add("active")})})});</script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Error Message Fortune Cookies</title>
+    <link rel="stylesheet" href="./src/css/main.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4ecdc4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .tagline {
+            margin: 10px 0 0;
+            font-style: italic;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .input-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .output-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e63946;
+        }
+
+        .result {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            font-family: monospace;
+            color: #e63946;
+            padding: 10px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid #e63946;
+            margin-bottom: 15px;
+        }
+
+        .fortune-message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #4ecdc4;
+        }
+
+        .style-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .style-option {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .style-option input {
+            margin-right: 8px;
+        }
+
+        .style-option input:checked + .style-name {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .style-option:has(input:checked) {
+            border-color: #ff6b6b;
+            background-color: rgba(255, 107, 107, 0.05);
+        }
+
+        .style-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4ecdc4;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Try Error Message Fortune Cookies</h1>
+            <p class="tagline">Transform your error messages into creative wisdom</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="input-section">
+                <h2>Enter Your Error Message</h2>
+                <textarea id="error-input" placeholder="Paste your error message here...
+Example: TypeError: Cannot read property 'length' of undefined"></textarea>
+
+                <h3>Choose Transformer Style</h3>
+                <div class="style-options">
+                    <label class="style-option">
+                        <input type="radio" name="style" value="confucius" checked>
+                        <span class="style-name">Error Confucius</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="haiku">
+                        <span class="style-name">Error Haiku</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="tarot">
+                        <span class="style-name">Syntax Error Tarot</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="blame">
+                        <span class="style-name">Blame Deflector</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="zen">
+                        <span class="style-name">Zen Meditation</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="motivational">
+                        <span class="style-name">Motivational Error</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="shakespeare">
+                        <span class="style-name">Shakespearean Drama</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="filmNoir">
+                        <span class="style-name">Film Noir Detective</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="sciFi">
+                        <span class="style-name">Sci-Fi Technobabble</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="pirate">
+                        <span class="style-name">Pirate Speak</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="cowboy">
+                        <span class="style-name">Cowboy Western</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="superhero">
+                        <span class="style-name">Superhero Comic</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="medieval">
+                        <span class="style-name">Medieval Fantasy</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="horror">
+                        <span class="style-name">B-Movie Horror</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="influencer">
+                        <span class="style-name">Social Media Influencer</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="legal">
+                        <span class="style-name">Legal Jargon</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="recipe">
+                        <span class="style-name">Cooking Recipe</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="radio" name="style" value="sports">
+                        <span class="style-name">Sports Commentary</span>
+                    </label>
+                </div>
+
+                <button id="transform-button">Transform Error</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Your Fortune</h2>
+                <div id="result" class="result">
+                    <p>Enter an error message and choose a style to see your fortune...</p>
+                </div>
+            </section>
+        </main>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Error Message Fortune Cookies | <a href="https://github.com/avifenesh/Error-fun">GitHub</a> | <a href="https://avifenesh.github.io/Error-fun/">Live Demo</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Include all transformer functions directly in this file
+        // Core transformers
+        function confuciusTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "Confucius say: Man who {action} {subject} find himself {consequence}.",
+                "Ancient wisdom tell us: Those who {action} will surely {consequence}.",
+                "Path to enlightenment never {action}. Wise developer {alternative}.",
+                "In garden of code, {subject} cannot grow without {requirement}.",
+                "Confucius say: {errorType} today leads to wisdom tomorrow, but only if you {solution}."
+            ];
+
+            const actions = [
+                "try to measure length of nothing",
+                "seek undefined variables",
+                "chase null references",
+                "ignore compiler warnings",
+                "skip writing tests",
+                "rush through debugging"
+            ];
+
+            const subjects = [
+                "undefined object",
+                "missing property",
+                "broken code",
+                "syntax error",
+                "runtime exception"
+            ];
+
+            const consequences = [
+                "coming up short",
+                "lost in empty space",
+                "with many bugs to fix",
+                "debugging until sunrise",
+                "learning valuable lesson"
+            ];
+
+            const alternatives = [
+                "checks for null before proceeding",
+                "writes tests before code",
+                "seeks help from community",
+                "consults ancient documentation",
+                "meditates on error message"
+            ];
+
+            const requirements = [
+                "proper initialization",
+                "careful attention to detail",
+                "defensive programming",
+                "type checking",
+                "error handling"
+            ];
+
+            const solutions = [
+                "learn from mistakes",
+                "add proper error handling",
+                "write more tests",
+                "seek wisdom of senior developer",
+                "take time to understand root cause"
+            ];
+
+            // Select a random template
+            let template = templates[Math.floor(Math.random() * templates.length)];
+
+            // Replace placeholders with random values
+            template = template.replace('{action}', actions[Math.floor(Math.random() * actions.length)]);
+            template = template.replace('{subject}', subjects[Math.floor(Math.random() * subjects.length)]);
+            template = template.replace('{consequence}', consequences[Math.floor(Math.random() * consequences.length)]);
+            template = template.replace('{alternative}', alternatives[Math.floor(Math.random() * alternatives.length)]);
+            template = template.replace('{requirement}', requirements[Math.floor(Math.random() * requirements.length)]);
+            template = template.replace('{solution}', solutions[Math.floor(Math.random() * solutions.length)]);
+            template = template.replace('{errorType}', errorType);
+
+            return template;
+        }
+
+        function haikuTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const firstLines = [
+                "Variable unknown",
+                "Undefined value",
+                "Syntax breaks the flow",
+                "Function returns void",
+                "Reference not found",
+                "Exception thrown high"
+            ];
+
+            const secondLines = [
+                "Shadows in empty namespace",
+                "Code compiles but still fails",
+                "Logic lost in the deep void",
+                "Searching through the darkness",
+                "Algorithms stumble blind",
+                "Null pointer wilderness"
+            ];
+
+            const thirdLines = [
+                "Reference to void",
+                "Debug until dawn",
+                "Restart and try again",
+                "Wisdom comes through pain",
+                "Stack trace tells the tale",
+                "Error teaches truth"
+            ];
+
+            const firstLine = firstLines[Math.floor(Math.random() * firstLines.length)];
+            const secondLine = secondLines[Math.floor(Math.random() * secondLines.length)];
+            const thirdLine = thirdLines[Math.floor(Math.random() * thirdLines.length)];
+
+            return `${firstLine}<br>${secondLine}<br>${thirdLine}`;
+        }
+
+        function tarotTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const cards = [
+                "The Null Pointer",
+                "The Undefined Variable",
+                "The Syntax Error",
+                "The Infinite Loop",
+                "The Stack Overflow",
+                "The Memory Leak",
+                "The Race Condition",
+                "The Broken Promise",
+                "The Unhandled Exception",
+                "The Legacy Code"
+            ];
+
+            const positions = [
+                "upright",
+                "reverse"
+            ];
+
+            const interpretations = [
+                "A structure in your life is opening before it should. Patience with syntax will reveal the proper path.",
+                "You have been ignoring the signs. The error is not in your code, but in your approach.",
+                "What seems missing is actually hiding in plain sight. Look to the documentation for guidance.",
+                "A cycle repeats until you break it. Consider a different algorithm for your problem.",
+                "The foundation of your work is unstable. Return to first principles before proceeding.",
+                "An old mistake returns in a new form. This time, handle the exception properly."
+            ];
+
+            const selectedCard = cards[Math.floor(Math.random() * cards.length)];
+            const position = positions[Math.floor(Math.random() * positions.length)];
+            const interpretation = interpretations[Math.floor(Math.random() * interpretations.length)];
+
+            return `The ${selectedCard} appears in ${position} position. ${interpretation}`;
+        }
+
+        function blameTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const excuses = [
+                "This isn't actually a bug, it's an undocumented feature.",
+                "It works on my machine. It must be an environmental issue.",
+                "Mercury is in retrograde, affecting all JavaScript code.",
+                "The intern must have committed that code.",
+                "That part was outsourced to another team.",
+                "The requirements weren't clear enough.",
+                "The client changed their mind after we delivered.",
+                "That code was written before my time here.",
+                "It's a browser-specific issue.",
+                "The API documentation was misleading.",
+                "It's a third-party library issue, not our code.",
+                "We're pushing the boundaries of what this language can do.",
+                "The bug is actually in the operating system.",
+                "Cosmic rays must have flipped a bit in memory."
+            ];
+
+            return excuses[Math.floor(Math.random() * excuses.length)];
+        }
+
+        function motivationalTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "FAILURE: The stepping stone to SUCCESS. Your {errorType} is just the beginning of your debugging journey!",
+                "When life gives you {errorType}, make INNOVATION!",
+                "PERSISTENCE: Because your code doesn't work until it does!",
+                "The expert was once a beginner who encountered the same {errorType} as you.",
+                "DEBUGGING: Because even the best developers create infinite loops sometimes!",
+                "Your {errorType} today is preparing you for a BREAKTHROUGH tomorrow!",
+                "NEVER GIVE UP: Every error message is a clue to success!"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/{errorType}/g, errorType);
+
+            return template;
+        }
+
+        function techSupportTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const responses = [
+                "Have you tried turning it off and on again?",
+                "This issue appears to be happening between the keyboard and chair.",
+                "According to our logs, everything is working as intended.",
+                "Let me transfer you to our advanced debugging department.",
+                "That feature is working as designed.",
+                "We'll need to escalate this to our development team.",
+                "This is a known issue that will be fixed in a future release.",
+                "Your support ticket has been created. Reference #ERROR-404-SUPPORT-NOT-FOUND.",
+                "Please clear your cache and try again.",
+                "Our systems show no errors on our end."
+            ];
+
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function poeticTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const poems = [
+                `In the silent depths of code's embrace,<br>
+                A ${errorType} emerges with quiet grace.<br>
+                Though frustration mounts with each passing hour,<br>
+                In debugging's challenge lies your power.`,
+
+                `Undefined, null, or simply not there,<br>
+                The ${errorType} leaves your logic bare.<br>
+                Yet in this moment of digital strife,<br>
+                Lies wisdom reflecting the truths of life.`,
+
+                `The cursor blinks where the error arose,<br>
+                A digital thorn on an otherwise perfect rose.<br>
+                But roses need thorns, and code needs its flaws,<br>
+                To teach us the beauty of logical laws.`,
+
+                `When your code breaks and your spirit sinks low,<br>
+                Remember that all great developers know,<br>
+                The path to mastery is paved with mistakes,<br>
+                And ${errorType}s are merely the dues that it takes.`
+            ];
+
+            return poems[Math.floor(Math.random() * poems.length)];
+        }
+
+        function zenTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const meditations = [
+                "In the silence between keystrokes, we find the path by noticing where we stumble. The solution will appear when the mind is still.",
+                "The error is not in the code, but in our attachment to how we believe the code should behave. Let go of expectations to find clarity.",
+                "When we embrace the error as our teacher, every bug becomes a step on the path to enlightenment.",
+                "The wise developer knows that errors are not failures, but signposts pointing toward deeper understanding.",
+                "Like a stone in a stream, the error does not block your path—it merely shows you where the current flows.",
+                "Before fixing the bug, understand its nature. Before understanding its nature, quiet your frustration.",
+                "The bug that challenges you most holds the greatest lesson. Approach it with curiosity rather than judgment."
+            ];
+
+            return meditations[Math.floor(Math.random() * meditations.length)];
+        }
+
+        // Creative transformers
+        function shakespeareanTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const openings = [
+                "Alas, what tragedy befalls thy code!",
+                "O woeful error, what sorrow thou bringest!",
+                "What manner of beast is this error I see before me?",
+                "Hark! A most grievous fault appears!",
+                "To err or not to err, that is the question."
+            ];
+
+            const middles = [
+                "Thy syntax hath more gaps than a peasant's teeth.",
+                "This function, full of sound and fury, signifying nothing.",
+                "O cursed variables, why dost thou elude me so?",
+                "The fault, dear programmer, is not in our stars, but in our code.",
+                "How now! A rat? Dead, for a ducat, dead!"
+            ];
+
+            const closings = [
+                "What light through yonder console breaks? It is the solution, and wisdom is the sun.",
+                "Once more unto the debugger, dear friends, once more!",
+                "All's well that ends with working code.",
+                "Parting is such sweet sorrow, that I shall debug 'til it be morrow.",
+                "Exit, pursued by a bug."
+            ];
+
+            const opening = openings[Math.floor(Math.random() * openings.length)];
+            const middle = middles[Math.floor(Math.random() * middles.length)];
+            const closing = closings[Math.floor(Math.random() * closings.length)];
+
+            return `${opening} ${middle} ${closing}`;
+        }
+
+        function filmNoirTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "It was a dark and stormy night when the ${errorType} walked into my function. I knew it meant trouble from the start.",
+                "The ${errorType} stood in the doorway like a shadow. 'Looking for me?' it said. I reached for my debugger.",
+                "This city's full of errors, kid. The ${errorType}? Just another case that don't add up.",
+                "Twenty lines of code. One ${errorType}. The odds weren't good, but then again, neither was I.",
+                "I've seen my share of bugs, but this ${errorType}? This was different. This had the stench of a setup."
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function sciFiTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "Captain's Log, Stardate 43.7: We've encountered a ${errorType} anomaly in the main computer system.",
+                "The quantum flux capacitor can't handle the ${errorType}! We need to reverse the polarity of the neutron flow!",
+                "Warning! ${errorType} detected in Sector 7-G. Initiating emergency protocol subroutine Alpha-3.",
+                "The ${errorType} is causing a cascading failure in the primary buffer panel. Rerouting through auxiliary systems.",
+                "Scanners indicate the presence of a ${errorType} entity in the codebase. It appears to be feeding on our logic circuits."
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function pirateTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "Arr! Ye got yerself a nasty case o' the ${errorType}! Shiver me timbers!",
+                "Blimey! This ${errorType} be worse than scurvy! Ye best be fixin' it before we make ye walk the plank!",
+                "Avast ye! There be a ${errorType} lurkin' in yer code! Man the debuggers!",
+                "Yo ho ho and a bottle o' rum! This ${errorType} be cursed by Davy Jones himself!",
+                "Splice the mainbrace! We've hit a ${errorType} reef! All hands on deck to fix this bilge-sucking bug!"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function cowboyTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "Well, I'll be damned! Looks like we got ourselves a ${errorType} 'round these parts.",
+                "This ${errorType} is wilder than a bull at a rodeo. Time to lasso this varmint!",
+                "Ain't seen a ${errorType} this ornery since the great code rush of '49.",
+                "Whoa there, partner! That ${errorType} just spooked the whole dang codebase!",
+                "This town ain't big enough for both me and this ${errorType}. One of us has gotta go."
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function superheroTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "KAPOW! The ${errorType} strikes again! But fear not, for CodeHero is here to save the day!",
+                "Holy runtime exceptions, Batman! It's the ${errorType}! To the Debug-mobile!",
+                "With great code comes great responsibility. This ${errorType} must be stopped!",
+                "The ${errorType} is my arch-nemesis. I must use my debugging superpowers to defeat it!",
+                "Faster than a compiling processor! More powerful than a recursive function! It's SuperDev, here to fix the ${errorType}!"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function medievalTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "Hear ye, hear ye! A ${errorType} dragon hath invaded the kingdom of thy code!",
+                "By the old gods and the new, this ${errorType} shall not stand! Bring forth the debugging sword!",
+                "The prophecy foretold of a ${errorType} that would bring darkness to the realm. That day has come.",
+                "Brave knight, thy quest is clear: vanquish the ${errorType} and restore peace to the codebase.",
+                "Zounds! A ${errorType} approaches from the north! Man the battlestations and prepare the unit tests!"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function horrorTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "THE CALL IS COMING FROM INSIDE THE FUNCTION! IT'S THE ${errorType}!",
+                "Whatever you do, don't look at the ${errorType}... It's already too late. It's seen you.",
+                "They thought the code was fixed... BUT THE ${errorType} CAME BACK! [DRAMATIC MUSIC]",
+                "As darkness fell upon the codebase, the programmer realized with horror... the ${errorType} was alive!",
+                "NIGHT OF THE LIVING ${errorType}! Just when you thought it was safe to deploy to production..."
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType.toUpperCase());
+
+            return template;
+        }
+
+        function influencerTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "OMG you guys! 😱 Just ran into this CRAZY ${errorType} while coding! #CodeFail #DevLife",
+                "Can't even with this ${errorType} right now! 🙄 Debugging is my cardio today! 💪 #TechInfluencer",
+                "STORYTIME: The most INSANE ${errorType} just happened in my code! [NOT CLICKBAIT] #CodeWithMe",
+                "This ${errorType} is literally everything! 💯 Don't forget to like and subscribe for more debugging tips! #BlessedCode",
+                "So I'm just sitting here manifesting good code energy ✨ when this ${errorType} shows up uninvited! #CodeJourney #Authentic"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function legalTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "WHEREAS, a ${errorType} has been identified in the aforementioned code; and WHEREAS, said error impedes the proper function thereof; NOW, THEREFORE, BE IT RESOLVED that debugging shall commence forthwith.",
+                "The party of the first part (hereinafter referred to as 'The Developer') acknowledges the existence of a ${errorType} as notified by the party of the second part (hereinafter referred to as 'The Compiler').",
+                "Pursuant to Section 404 of the Code, the undersigned hereby gives notice of a ${errorType}, for which all rights to appeal are reserved under the Debugging Act of 2025.",
+                "In the matter of the Application of ${errorType}: The court finds that the evidence of syntax violation is substantial and compelling.",
+                "NOTICE OF ERROR: This is to certify that a ${errorType} has been duly logged and recorded in the official registry of exceptions."
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function recipeTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "RECIPE FOR DISASTER: ${errorType} SURPRISE<br><br>INGREDIENTS:<br>- 1 cup of misplaced semicolons<br>- 2 tablespoons of logical errors<br>- A pinch of confusion<br><br>INSTRUCTIONS:<br>1. Mix bugs thoroughly until code fails<br>2. Let simmer for 3 hours of debugging<br>3. Garnish with console.log statements<br>4. Serve with a side of frustration",
+                "DEBUGGING DELIGHT: ${errorType} EDITION<br><br>PREP TIME: 5 minutes<br>DEBUG TIME: Eternal<br><br>INGREDIENTS:<br>- 3 cups of patience<br>- 1 large error message<br>- Stack trace to taste<br><br>DIRECTIONS:<br>1. Carefully examine each line of code<br>2. Add breakpoints liberally<br>3. Reduce heat and allow solution to appear<br>4. Season with comments for future reference",
+                "CHEF'S SPECIAL: ${errorType} STEW<br><br>INGREDIENTS:<br>- 1 broken function<br>- 2 undefined variables<br>- A heap of confusion<br><br>METHOD:<br>1. Throw all ingredients into IDE<br>2. Stir vigorously while questioning life choices<br>3. Simmer until error message appears<br>4. Fix and serve with a commit message"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType);
+
+            return template;
+        }
+
+        function sportsTransformer(error) {
+            const errorType = error.split(':')[0] || 'Error';
+            const errorDetails = error.split(':')[1] || '';
+
+            const templates = [
+                "AND THERE IT IS, FOLKS! A SPECTACULAR ${errorType} RIGHT AT THE CRUCIAL MOMENT! This developer is going to remember that mistake for a long time!",
+                "The code was looking good in the first half, I'm not gonna lie, but this ${errorType}? THAT'S A GAME CHANGER, FOLKS!",
+                "GOOOOOAAAAAL! The ${errorType} scores against the home team! The developers are looking devastated, Jim!",
+                "What a STUNNING upset by the underdog ${errorType}! Nobody saw this exception coming! The IDE is going wild!",
+                "It's the bottom of the ninth, bases loaded, two outs, and BAM! ${errorType} comes out of nowhere! This code is going into OVERTIME!"
+            ];
+
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            template = template.replace(/\${errorType}/g, errorType.toUpperCase());
+
+            return template;
+        }
+
+        // Combine all transformers
+        const transformers = {
+            confucius: confuciusTransformer,
+            haiku: haikuTransformer,
+            tarot: tarotTransformer,
+            blame: blameTransformer,
+            motivational: motivationalTransformer,
+            techSupport: techSupportTransformer,
+            poetic: poeticTransformer,
+            zen: zenTransformer,
+            shakespeare: shakespeareanTransformer,
+            filmNoir: filmNoirTransformer,
+            sciFi: sciFiTransformer,
+            pirate: pirateTransformer,
+            cowboy: cowboyTransformer,
+            superhero: superheroTransformer,
+            medieval: medievalTransformer,
+            horror: horrorTransformer,
+            influencer: influencerTransformer,
+            legal: legalTransformer,
+            recipe: recipeTransformer,
+            sports: sportsTransformer
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const errorInput = document.getElementById('error-input');
+            const transformButton = document.getElementById('transform-button');
+            const resultDiv = document.getElementById('result');
+            const styleOptions = document.querySelectorAll('input[name="style"]');
+
+            transformButton.addEventListener('click', () => {
+                const errorMessage = errorInput.value.trim();
+                if (!errorMessage) {
+                    // Replace alert with inline error message
+                    resultDiv.innerHTML = '<p class="error-message">Please enter an error message</p>';
+                    return;
+                }
+
+                let selectedStyle = 'confucius';
+                styleOptions.forEach(option => {
+                    if (option.checked) {
+                        selectedStyle = option.value;
+                    }
+                });
+
+                const transformer = transformers[selectedStyle];
+                if (!transformer) {
+                    resultDiv.innerHTML = '<p>Transformer style not found</p>';
+                    return;
+                }
+
+                const fortune = transformer(errorMessage);
+
+                resultDiv.innerHTML = `
+                    <div class="error-message">${errorMessage}</div>
+                    <div class="fortune-message">${fortune}</div>
+                `;
+            });
+
+            // Add some example error messages
+            const exampleErrors = [
+                "TypeError: Cannot read property 'length' of undefined",
+                "ReferenceError: x is not defined",
+                "SyntaxError: Unexpected token {",
+                "RangeError: Maximum call stack size exceeded",
+                "Error: Network request failed"
+            ];
+
+            const randomError = exampleErrors[Math.floor(Math.random() * exampleErrors.length)];
+            errorInput.value = randomError;
+        });
+    </script>
+</body>
+</html>
