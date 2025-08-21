@@ -1,4 +1,3 @@
-// Jest setup file
 global.fetch = jest.fn();
 
 // Mock for document.createElement

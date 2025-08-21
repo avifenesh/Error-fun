@@ -194,8 +194,8 @@ code, pre {
 
 .button:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 84, 112, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 84, 112, 0.3);
   text-decoration: none;
   color: white;
 }
@@ -245,8 +245,8 @@ code, pre {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.15);
 }
 
 /* Form elements */
@@ -304,6 +304,23 @@ select.form-control {
   overflow: hidden;
 }
 
+/* Theme-specific overrides for fortune display */
+.fortune-display.light {
+  color: var(--text);
+}
+.fortune-display.dark {
+  background-color: var(--dark-gray);
+  color: var(--off-white);
+}
+.fortune-display.zen {
+  background: linear-gradient(135deg, #f7fff7, #d6f5f1);
+  color: #1e3a35;
+}
+.fortune-display.chaos {
+  background: linear-gradient(135deg, #fff2f2, #ffe66d);
+  color: #4d3d00;
+}
+
 .fortune-container::before {
   content: '';
   position: absolute;
@@ -333,6 +350,16 @@ select.form-control {
   border-radius: var(--radius-md);
   margin-top: var(--space-lg);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: reveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes reveal {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .fortune-content::before {
@@ -453,7 +480,7 @@ select.form-control {
 
 .style-option:hover {
   border-color: var(--secondary-light);
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.03);
 }
 
 .style-option.active {
@@ -548,7 +575,9 @@ select.form-control {
 
 .action-button:hover {
   background-color: var(--off-white);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--gray);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .action-button svg {
@@ -711,8 +740,8 @@ select.form-control {
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.15);
 }
 
 .feature-icon {

@@ -86,6 +86,10 @@ const ErrorFortune = (function() {
    * Add skip link for accessibility
    */
   function addSkipLink() {
+    // Defensive check for document.body, which can be an issue in some test environments
+    if (!document.body) {
+      return;
+    }
     const skipLink = document.createElement('a');
     skipLink.href = '#fortune-display';
     skipLink.className = 'skip-link';
@@ -281,6 +285,13 @@ const ErrorFortune = (function() {
     elements.jsApiDisplay = document.getElementById('js-api-display');
     elements.historyContainer = document.getElementById('history-container');
     elements.favoritesContainer = document.getElementById('favorites-container');
+
+    // Homepage UI elements
+    elements.heroCookie = document.querySelector('.hero .cookie');
+    elements.styleOptions = document.querySelectorAll('.style-option');
+    elements.themeOptions = document.querySelectorAll('.theme-option');
+    elements.tabButtons = document.querySelectorAll('.tab-button');
+    elements.tabPanes = document.querySelectorAll('.tab-pane');
   }
   
   /**
@@ -292,6 +303,9 @@ const ErrorFortune = (function() {
       elements.form.addEventListener('submit', handleFormSubmit);
     }
     
+    // Homepage UI events
+    bindHomepageUIEvents();
+
     // Action buttons
     if (elements.fortuneActions) {
       const copyImageBtn = document.getElementById('copy-image');
@@ -400,7 +414,8 @@ const ErrorFortune = (function() {
     crack(errorMessage, {
       style,
       theme,
-      target: 'fortune-display'
+      target: 'fortune-display',
+      nonce: Date.now() // Cache-busting nonce
     });
   }
   
@@ -1479,8 +1494,8 @@ const ErrorFortune = (function() {
   };
 })();
 
-// Auto-initialize if in browser context
-if (typeof window !== 'undefined') {
+// Auto-initialize if in browser context, but not in a test environment
+if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'test') {
   window.ErrorFortune = ErrorFortune;
   
   // Initialize when DOM is ready
