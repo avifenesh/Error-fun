@@ -304,6 +304,23 @@ select.form-control {
   overflow: hidden;
 }
 
+/* Theme-specific overrides for fortune display */
+.fortune-display.light {
+  color: var(--text);
+}
+.fortune-display.dark {
+  background-color: var(--dark-gray);
+  color: var(--off-white);
+}
+.fortune-display.zen {
+  background: linear-gradient(135deg, #f7fff7, #d6f5f1);
+  color: #1e3a35;
+}
+.fortune-display.chaos {
+  background: linear-gradient(135deg, #fff2f2, #ffe66d);
+  color: #4d3d00;
+}
+
 .fortune-container::before {
   content: '';
   position: absolute;
