@@ -414,7 +414,8 @@ const ErrorFortune = (function() {
     crack(errorMessage, {
       style,
       theme,
-      target: 'fortune-display'
+      target: 'fortune-display',
+      nonce: Date.now() // Cache-busting nonce
     });
   }
   
