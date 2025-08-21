@@ -1,6 +1,6 @@
 {
   "name": "error-fortune-cookies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform boring error messages into hilarious fortune cookie wisdom",
   "main": "dist/error-fortune.js",
   "module": "dist/error-fortune.esm.js",
