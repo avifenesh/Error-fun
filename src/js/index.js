@@ -25,7 +25,7 @@ import CookieAnimator from './ui/animations.js';
 import html2canvas from 'html2canvas';
 
 // Namespace for the application
-const ErrorFortune = (function() {
+const ErrorFortune = (function () {
   // Private variables
   let config = {
     animation: true,
@@ -36,7 +36,7 @@ const ErrorFortune = (function() {
   };
   
   // Cache DOM elements
-  let elements = {};
+  const elements = {};
   
   // Initialize animator
   const animator = new CookieAnimator();
@@ -78,8 +78,6 @@ const ErrorFortune = (function() {
     
     // Optimize performance
     optimizePerformance();
-    
-    console.log('Error Fortune Cookies initialized');
   }
   
   /**
@@ -132,8 +130,12 @@ const ErrorFortune = (function() {
       const historySectionEl = document.getElementById('history-section');
       const favoritesSectionEl = document.getElementById('favorites-section');
       
-      if (historySectionEl) lazyLoadObserver.observe(historySectionEl);
-      if (favoritesSectionEl) lazyLoadObserver.observe(favoritesSectionEl);
+      if (historySectionEl) {
+        lazyLoadObserver.observe(historySectionEl);
+      }
+      if (favoritesSectionEl) {
+        lazyLoadObserver.observe(favoritesSectionEl);
+      }
     }
   }
   
@@ -309,26 +311,40 @@ const ErrorFortune = (function() {
     // Action buttons
     if (elements.fortuneActions) {
       const copyImageBtn = document.getElementById('copy-image');
-      if (copyImageBtn) copyImageBtn.addEventListener('click', copyAsImage);
+      if (copyImageBtn) {
+        copyImageBtn.addEventListener('click', copyAsImage);
+      }
       
       const copyLinkBtn = document.getElementById('copy-link');
-      if (copyLinkBtn) copyLinkBtn.addEventListener('click', copyLink);
+      if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', copyLink);
+      }
       
       const downloadBtn = document.getElementById('download');
-      if (downloadBtn) downloadBtn.addEventListener('click', downloadFortune);
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', downloadFortune);
+      }
       
       const embedCodeBtn = document.getElementById('embed-code');
-      if (embedCodeBtn) embedCodeBtn.addEventListener('click', showEmbedCode);
+      if (embedCodeBtn) {
+        embedCodeBtn.addEventListener('click', showEmbedCode);
+      }
       
       // Social sharing buttons
       const twitterBtn = document.getElementById('share-twitter');
-      if (twitterBtn) twitterBtn.addEventListener('click', () => shareToSocial('twitter'));
+      if (twitterBtn) {
+        twitterBtn.addEventListener('click', () => shareToSocial('twitter'));
+      }
       
       const facebookBtn = document.getElementById('share-facebook');
-      if (facebookBtn) facebookBtn.addEventListener('click', () => shareToSocial('facebook'));
+      if (facebookBtn) {
+        facebookBtn.addEventListener('click', () => shareToSocial('facebook'));
+      }
       
       const linkedinBtn = document.getElementById('share-linkedin');
-      if (linkedinBtn) linkedinBtn.addEventListener('click', () => shareToSocial('linkedin'));
+      if (linkedinBtn) {
+        linkedinBtn.addEventListener('click', () => shareToSocial('linkedin'));
+      }
     }
     
     // Copy buttons
@@ -528,7 +544,7 @@ const ErrorFortune = (function() {
       
       // Show error state
       if (targetElement) {
-        showErrorState(targetElement, error);
+        showErrorState(targetElement);
       }
       
       // Execute callback with error
@@ -564,9 +580,8 @@ const ErrorFortune = (function() {
   /**
    * Show error state in the target element
    * @param {HTMLElement} target - The element to show error in
-   * @param {Error} error - The error that occurred
    */
-  function showErrorState(target, error) {
+  function showErrorState(target) {
     // Add error class
     target.className = 'fortune-display error';
     
@@ -720,7 +735,9 @@ const ErrorFortune = (function() {
    */
   function copyAsImage() {
     const fortuneDisplay = document.getElementById('fortune-display');
-    if (!fortuneDisplay) return;
+    if (!fortuneDisplay) {
+      return;
+    }
     
     // Show loading indicator
     const button = document.getElementById('copy-image');
@@ -770,7 +787,9 @@ const ErrorFortune = (function() {
    */
   function downloadFortune() {
     const fortuneDisplay = document.getElementById('fortune-display');
-    if (!fortuneDisplay) return;
+    if (!fortuneDisplay) {
+      return;
+    }
     
     // Show loading indicator
     const button = document.getElementById('download');
@@ -897,29 +916,29 @@ const ErrorFortune = (function() {
     let shareWindow;
     
     switch (platform) {
-      case 'twitter':
-        shareWindow = window.open(
-          `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
-          'share-twitter',
-          'width=550,height=420,resizable=yes,scrollbars=yes'
-        );
-        break;
+    case 'twitter':
+      shareWindow = window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+        'share-twitter',
+        'width=550,height=420,resizable=yes,scrollbars=yes'
+      );
+      break;
         
-      case 'facebook':
-        shareWindow = window.open(
-          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-          'share-facebook',
-          'width=550,height=420,resizable=yes,scrollbars=yes'
-        );
-        break;
+    case 'facebook':
+      shareWindow = window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+        'share-facebook',
+        'width=550,height=420,resizable=yes,scrollbars=yes'
+      );
+      break;
         
-      case 'linkedin':
-        shareWindow = window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-          'share-linkedin',
-          'width=550,height=420,resizable=yes,scrollbars=yes'
-        );
-        break;
+    case 'linkedin':
+      shareWindow = window.open(
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+        'share-linkedin',
+        'width=550,height=420,resizable=yes,scrollbars=yes'
+      );
+      break;
     }
     
     if (shareWindow) {
@@ -1113,7 +1132,9 @@ const ErrorFortune = (function() {
    * @param {boolean} lazy - Whether to lazy load items
    */
   function loadHistory(lazy = true) {
-    if (!elements.historyContainer) return;
+    if (!elements.historyContainer) {
+      return;
+    }
     
     const history = getHistory();
     
@@ -1222,7 +1243,9 @@ const ErrorFortune = (function() {
    * @param {boolean} lazy - Whether to lazy load items
    */
   function loadFavorites(lazy = true) {
-    if (!elements.favoritesContainer) return;
+    if (!elements.favoritesContainer) {
+      return;
+    }
     
     const favorites = getFavorites();
     
@@ -1381,7 +1404,9 @@ const ErrorFortune = (function() {
    */
   function updateFavoriteButtonState(fortune) {
     const favoriteBtn = document.getElementById('favorite-fortune');
-    if (!favoriteBtn) return;
+    if (!favoriteBtn) {
+      return;
+    }
     
     const favorites = getFavorites();
     const isFavorite = favorites.some(f => 
@@ -1436,7 +1461,7 @@ const ErrorFortune = (function() {
     };
     
     const dataStr = JSON.stringify(data, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
     
     const exportFileDefaultName = `error-fortune-data-${new Date().toISOString().slice(0, 10)}.json`;
     
@@ -1455,7 +1480,7 @@ const ErrorFortune = (function() {
   function importData(file) {
     const reader = new FileReader();
     
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       try {
         const data = JSON.parse(e.target.result);
         
@@ -1494,7 +1519,7 @@ const ErrorFortune = (function() {
     // Style option selection
     if (elements.styleOptions) {
       elements.styleOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
           elements.styleOptions.forEach(opt => opt.classList.remove('active'));
           this.classList.add('active');
         });
@@ -1504,7 +1529,7 @@ const ErrorFortune = (function() {
     // Theme option selection
     if (elements.themeOptions) {
       elements.themeOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
           elements.themeOptions.forEach(opt => opt.classList.remove('active'));
           this.classList.add('active');
         });
@@ -1514,7 +1539,7 @@ const ErrorFortune = (function() {
     // Tab switching
     if (elements.tabButtons && elements.tabPanes) {
       elements.tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
           const tabName = this.getAttribute('data-tab');
 
           elements.tabButtons.forEach(btn => btn.classList.remove('active'));
