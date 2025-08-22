@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "python3 -m http.server 8080",
     "start": "npm run dev",
-    "test": "jest",
+    "test": "node --experimental-modules --experimental-vm-modules node_modules/.bin/jest",
     "lint": "eslint src/js/**/*.js",
     "clean": "rm -rf node_modules/.cache/"
   },

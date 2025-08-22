@@ -1,9 +1,7 @@
 {
   "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
   "testEnvironment": "jsdom",
-  "transform": {
-    "^.+\\.jsx?$": "babel-jest"
-  },
+  "transform": {},
   "moduleNameMapper": {
     "\\.(css|less|scss|sass)$": "<rootDir>/tests/mocks/styleMock.js"
   }
