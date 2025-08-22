@@ -548,37 +548,37 @@ function legalTransformer(error) {
     "NOTICE OF DEFICIENCY:",
     "WHEREAS, a certain error (hereinafter referred to as 'the Error') has been detected;",
     "ATTENTION: You are hereby notified of a code violation pursuant to Section 404 of the Programming Code;",
-    "IN THE MATTER OF: Runtime Exception v. Your Code;",
+    "NOTICE: IN THE MATTER OF: Runtime Exception v. Your Code;",
     "To Whom It May Concern: This letter serves as formal notification of non-compliance;"
   ];
   
   const middles = {
     TypeError: [
       "the party of the first part (the 'Type') has been incorrectly associated with the party of the second part (the 'Value'), constituting a breach of the Type Agreement;",
-      "a Type Mismatch has occurred, as defined in Appendix B, Paragraph 7, Subparagraph (iii) of the JavaScript Specification;",
-      "the aforementioned TypeError constitutes prima facie evidence of negligent type checking;"
+      "a Type Mismatch has occurred, constituting a breach as defined in Appendix B, Paragraph 7, Subparagraph (iii) of the JavaScript Specification;",
+      "the aforementioned TypeError constitutes prima facie evidence of a compliance breach;"
     ],
     ReferenceError: [
       "the referenced entity (hereinafter 'the Variable') was not properly declared or has been nullified prior to access, in violation of the Variable Scope Act;",
-      "the defendant (your code) attempted to access a reference without first establishing its existence, contrary to established precedent in 'Null v. Pointer' (2011);",
+      "the defendant (your code) attempted to access a reference without first establishing its existence, a violation contrary to established precedent in 'Null v. Pointer' (2011);",
       "the referenced property was not found within the object's enumerable properties, as required by Section 3.2 of the Object Property Access Protocol;"
     ],
     SyntaxError: [
-      "the syntax structure fails to conform to the grammatical requirements set forth in the Language Specification, revision 2.1;",
-      "improper bracket closure and/or semicolon omission has been detected, in direct contravention of the Code Formatting Guidelines;",
-      "the parser was unable to interpret the provided syntax, as it deviated substantially from accepted standards of code construction;"
+      "the syntax structure is in violation of the grammatical requirements set forth in the Language Specification, revision 2.1;",
+      "improper bracket closure and/or semicolon omission has been detected, a breach of the Code Formatting Guidelines;",
+      "the parser was unable to interpret the provided syntax, a violation of accepted standards of code construction;"
     ],
     Default: [
-      "the code in question has failed to perform as reasonably expected by a programmer of ordinary skill in the art;",
-      "a material defect has been identified in the execution of the program, causing substantial impairment to its intended functionality;",
-      "the error constitutes a significant deviation from the expected behavior as documented in the relevant specifications;"
+      "the code in question is in breach of the expectation to perform as reasonably expected by a programmer of ordinary skill in the art;",
+      "a material defect and compliance violation has been identified in the execution of the program, causing substantial impairment to its intended functionality;",
+      "the error constitutes a significant deviation from the expected behavior as documented in the relevant specifications, and all rights are reserved;"
     ]
   };
   
   const closings = [
     "REMEDY: You are advised to debug the offending code within thirty (30) days of this notice to avoid further complications.",
     "THEREFORE, it is strongly recommended that immediate corrective action be taken to rectify this situation.",
-    "FAILURE to address this error may result in cascading failures and is undertaken at your own risk.",
+    "FAILURE to address this breach may result in cascading failures and is undertaken at your own risk.",
     "The injured party (the Program) reserves all rights and remedies available under the Debugging Protocol.",
     "This error notice is issued without prejudice to any additional errors that may be discovered upon further code review."
   ];
