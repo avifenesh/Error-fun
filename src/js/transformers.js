@@ -92,13 +92,13 @@ export function blameTransformer(error) {
     "This error is clearly caused by cosmic rays flipping bits in your RAM. Totally unavoidable!",
     "Mercury is in retrograde, affecting all JavaScript engines in your timezone this week.",
     "A butterfly in Tokyo flapped its wings, creating quantum entanglement with your variables.",
-    "The code was perfect until someone looked at it. Classic observer effect bug!",
+    "The code was perfect until someone looked at it. Classic quantum observer effect bug!",
     "Solar flare activity is interfering with your CPU's ability to execute perfect logic.",
     "Your code exists in a quantum superposition of working and broken until observed by QA.",
-    "The error is actually a feature if viewed from a non-Euclidean geometric perspective.",
-    "Time dilation effects near your development server are causing temporal paradoxes.",
-    "The compiler is clearly having an existential crisis today. It's not you, it's them.",
-    "Electromagnetic interference from nearby microwaves is corrupting your variable assignments."
+    "The error is actually a feature if viewed from a non-Euclidean quantum geometric perspective.",
+    "Cosmic time dilation effects near your development server are causing temporal paradoxes.",
+    "The compiler is clearly having an existential crisis today due to solar interference. It's not you, it's them.",
+    "Electromagnetic interference from nearby microwaves is corrupting your variable assignments via butterfly effect."
   ];
   
   return excuses[Math.floor(Math.random() * excuses.length)];
@@ -180,11 +180,11 @@ export function techSupportTransformer(error) {
     "Have you tried turning your variables off and on again? Classic troubleshooting step #1.",
     "I see the problem here. Your code is working exactly as you wrote it, not as you intended it.",
     "This is a PEBKAC error: Problem Exists Between Keyboard And Chair. Very common issue.",
-    "Looking at our knowledge base... ah yes, this is a Code-ID-10-T error. Quite typical.",
+    "Looking at our knowledge base... ah yes, this is a Code-ID-10-T error. Please try again.",
     "Did you check if your computer is plugged in? No? Well, your logic might not be either.",
     "I'm going to need you to restart your thought process and try a different approach.",
     "This error is operating within normal parameters for untested code. Working as designed.",
-    "Have you updated your assumptions recently? Outdated expectations can cause compatibility issues.",
+    "Have you updated your assumptions recently? Try checking for outdated expectations that can cause compatibility issues.",
     "I see you're experiencing a logic leak. Try wrapping your code in some error handling.",
     "This appears to be a user-generated error. The system is working correctly; the input isn't."
   ];
