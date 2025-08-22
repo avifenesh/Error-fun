@@ -38,3 +38,5 @@ Desktop.ini
 
 # Ignore test coverage
 coverage/
+.gemini/
+gha-creds-*.json
