@@ -370,15 +370,15 @@ function fantasyTransformer(error) {
   const openings = [
     "Behold, a curse has befallen thy code!",
     "The ancient scrolls foretold of this error...",
-    "By the beard of Merlin!",
+    "By the beard of Merlin the wizard!",
     "A dark shadow has been cast upon thy program.",
-    "The oracles of programming have sent a warning."
+    "The ancient oracles of programming have sent a warning."
   ];
   
   const middles = {
     TypeError: [
       "The types have been enchanted by a mischievous sprite, causing chaos in the realm of variables.",
-      "Thy attempt to transmute one type into another has failed, as the alchemical formula was flawed.",
+      "Thy attempt to transmute one type into another has failed, as the magical formula was flawed.",
       "The dragon of TypeError breathes its fiery breath upon thy code."
     ],
     ReferenceError: [
@@ -403,7 +403,7 @@ function fantasyTransformer(error) {
     "Only the Sword of Debugging, forged in the fires of Stack Overflow, can vanquish this foe.",
     "Cast the sacred spell of Console.log() to reveal the hidden truth.",
     "The quest to fix this error shall be perilous, but rewarding.",
-    "May the gods of clean code guide thy hand in this dark hour."
+    "May the ancient gods of clean code guide thy hand in this dark hour."
   ];
   
   // Select random elements
