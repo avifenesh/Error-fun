@@ -1,35 +1,24 @@
 {
   "name": "error-fortune-cookies",
-  "version": "1.0.1",
-  "description": "Transform boring error messages into hilarious fortune cookie wisdom",
-  "main": "dist/error-fortune.js",
-  "module": "dist/error-fortune.esm.js",
-  "unpkg": "dist/error-fortune.min.js",
+  "version": "2.0.0",
+  "description": "Transform boring error messages into hilarious fortune cookie wisdom - Clean & Maintainable Edition",
+  "main": "src/js/app.js",
   "type": "module",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
-    "dev": "parcel index.html --open",
-    "build": "parcel build index.html try.html --out-dir dist",
-    "test": "jest --config jest.config.json",
-    "test:watch": "jest --config jest.config.json --watch",
-    "test:coverage": "jest --config jest.config.json --coverage",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "prepublishOnly": "npm run build"
+    "dev": "python3 -m http.server 8080",
+    "start": "npm run dev",
+    "test": "jest",
+    "lint": "eslint src/js/**/*.js",
+    "clean": "rm -rf node_modules/.cache/"
   },
   "keywords": [
     "error",
     "fortune",
-    "cookie",
+    "cookie", 
     "humor",
     "developer",
     "debugging",
-    "javascript",
-    "ui",
-    "frontend"
+    "javascript"
   ],
   "author": "Avi Fenesh",
   "license": "MIT",
@@ -37,25 +26,15 @@
     "type": "git",
     "url": "git+https://github.com/avifenesh/Error-fun.git"
   },
-  "bugs": {
-    "url": "https://github.com/avifenesh/Error-fun/issues"
-  },
   "homepage": "https://avifenesh.github.io/Error-fun/",
-  "dependencies": {
-    "html2canvas": "^1.4.1"
-  },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "babel-jest": "^30.0.5",
     "eslint": "^8.42.0",
     "jest": "^30.0.5",
-    "jest-environment-jsdom": "^30.0.5",
-    "parcel-bundler": "^1.12.5"
+    "jest-environment-jsdom": "^30.0.5"
   },
   "browserslist": [
     "last 2 Chrome versions",
-    "last 2 Firefox versions",
+    "last 2 Firefox versions", 
     "last 2 Safari versions",
     "last 2 Edge versions"
   ]

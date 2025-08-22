@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Fortune Cookies - Simple Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            min-height: 120px;
+            resize: vertical;
+            font-family: monospace;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .style-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .style-option {
+            position: relative;
+        }
+        
+        .style-option input {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .style-option label {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .style-option label:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .style-option input:checked + label {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .fortune-display {
+            margin-top: 30px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            display: none;
+        }
+        
+        .error-message {
+            font-family: monospace;
+            background: #fee;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+        
+        .fortune-content {
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .cookie {
+            text-align: center;
+            font-size: 4rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🥠 Error Fortune Cookies</h1>
+        <p class="subtitle">Transform boring error messages into ancient wisdom</p>
+        
+        <form id="errorForm">
+            <div class="form-group">
+                <label for="errorMessage">Enter your error message:</label>
+                <textarea id="errorMessage" placeholder="Paste your error message here... (e.g., TypeError: Cannot read property 'length' of undefined)" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Choose a fortune style:</label>
+                <div class="style-selector">
+                    <div class="style-option">
+                        <input type="radio" name="style" value="confucius" id="confucius" checked>
+                        <label for="confucius">🧙‍♂️ Confucius</label>
+                    </div>
+                    <div class="style-option">
+                        <input type="radio" name="style" value="haiku" id="haiku">
+                        <label for="haiku">🍃 Haiku</label>
+                    </div>
+                    <div class="style-option">
+                        <input type="radio" name="style" value="tarot" id="tarot">
+                        <label for="tarot">🔮 Tarot</label>
+                    </div>
+                    <div class="style-option">
+                        <input type="radio" name="style" value="blame" id="blame">
+                        <label for="blame">👽 Blame</label>
+                    </div>
+                    <div class="style-option">
+                        <input type="radio" name="style" value="zen" id="zen">
+                        <label for="zen">☯️ Zen</label>
+                    </div>
+                    <div class="style-option">
+                        <input type="radio" name="style" value="motivational" id="motivational">
+                        <label for="motivational">💪 Motivational</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="button">🥠 Crack Fortune Cookie</button>
+        </form>
+        
+        <div id="fortuneDisplay" class="fortune-display">
+            <div class="cookie">🥠</div>
+            <div class="error-message" id="originalError"></div>
+            <div class="fortune-content" id="fortuneText"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simple transformer functions (embedded for simplicity)
+        const transformers = {
+            confucius: function(error) {
+                const templates = [
+                    "Confucius say: Man who encounters '{error}' must first look inward before blaming the compiler.",
+                    "Ancient wisdom tells us: Those who rush through code will surely meet '{error}' on their path.",
+                    "Confucius say: Error '{error}' is not your enemy, but your teacher dressed in frustration.",
+                    "Man who sees '{error}' has opportunity to grow stronger through debugging.",
+                    "Wise developer knows: '{error}' today leads to wisdom tomorrow."
+                ];
+                const template = templates[Math.floor(Math.random() * templates.length)];
+                return template.replace('{error}', error.split(':')[0] || 'this error');
+            },
+            
+            haiku: function(error) {
+                const haikus = [
+                    "Code breaks silently<br>Error messages whisper truth<br>Debug brings peace",
+                    "Null pointer waits<br>In the shadows of your code<br>Handle with care",
+                    "Syntax error<br>Grammar of the digital realm<br>Compiler speaks wisdom",
+                    "Exception thrown<br>Like autumn leaves falling down<br>Catch what you can",
+                    "Variables lost<br>In the namespace void they drift<br>Initialize first"
+                ];
+                return haikus[Math.floor(Math.random() * haikus.length)];
+            },
+            
+            tarot: function(error) {
+                const cards = ["The Undefined Variable", "The Null Pointer", "The Syntax Error", "The Stack Overflow", "The Infinite Loop"];
+                const card = cards[Math.floor(Math.random() * cards.length)];
+                const position = Math.random() > 0.5 ? "upright" : "reversed";
+                return `The digital tarot reveals <strong>${card}</strong> in ${position} position. This error suggests a lesson waiting to be learned. Look beyond the surface of your code to find the deeper truth that will guide you to the solution.`;
+            },
+            
+            blame: function(error) {
+                const excuses = [
+                    "This error is clearly caused by solar flares interfering with your CPU's quantum state.",
+                    "Mercury is in retrograde, affecting all JavaScript engines in your timezone.",
+                    "A butterfly in Tokyo flapped its wings, creating a cascade effect that corrupted your variables.",
+                    "The code was perfect until someone looked at it wrong. It's a Heisenberg bug.",
+                    "This is obviously the result of cosmic ray bit-flipping in your RAM. Totally not your fault!",
+                    "Your code exists in a quantum superposition of working and not working until observed by the debugger."
+                ];
+                return excuses[Math.floor(Math.random() * excuses.length)];
+            },
+            
+            zen: function(error) {
+                const meditations = [
+                    "Breathe in the error, breathe out the solution. The bug is not your enemy, but your teacher.",
+                    "In the silence between keystrokes, wisdom emerges. Your error is a gift pointing toward growth.",
+                    "The path of debugging is never straight. Each error brings you closer to understanding.",
+                    "Like water flowing around rocks, let your code flow around obstacles. The error shows you the way.",
+                    "When the program crashes, listen closely. In the silence, the solution often whispers."
+                ];
+                return meditations[Math.floor(Math.random() * meditations.length)];
+            },
+            
+            motivational: function(error) {
+                const motivations = [
+                    "<strong>PERSISTENCE</strong><br><br>It's not about avoiding errors; it's about how elegantly you handle them. You've got this!",
+                    "<strong>GROWTH MINDSET</strong><br><br>Behind every great developer is a trail of conquered bugs. This error is just another stepping stone.",
+                    "<strong>RESILIENCE</strong><br><br>The difference between a novice and expert isn't the number of errors, but the speed of recovery. Keep going!",
+                    "<strong>OPPORTUNITY</strong><br><br>This error isn't a roadblock—it's a chance to become a better developer. Embrace the challenge!",
+                    "<strong>SUCCESS</strong><br><br>Every error solved makes you stronger. You're not just debugging code; you're leveling up your skills!"
+                ];
+                return motivations[Math.floor(Math.random() * motivations.length)];
+            }
+        };
+        
+        document.getElementById('errorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const errorMessage = document.getElementById('errorMessage').value.trim();
+            const style = document.querySelector('input[name="style"]:checked').value;
+            
+            if (!errorMessage) {
+                alert('Please enter an error message');
+                return;
+            }
+            
+            // Generate fortune
+            const wisdom = transformers[style](errorMessage);
+            
+            // Display result
+            document.getElementById('originalError').textContent = errorMessage;
+            document.getElementById('fortuneText').innerHTML = wisdom;
+            document.getElementById('fortuneDisplay').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('fortuneDisplay').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Add some sample errors
+        const sampleErrors = [
+            "TypeError: Cannot read property 'length' of undefined",
+            "ReferenceError: x is not defined",
+            "SyntaxError: Unexpected token {",
+            "RangeError: Maximum call stack size exceeded",
+            "TypeError: null is not an object"
+        ];
+        
+        // Add a sample button
+        const sampleButton = document.createElement('button');
+        sampleButton.type = 'button';
+        sampleButton.className = 'button';
+        sampleButton.textContent = '🎲 Try Sample Error';
+        sampleButton.style.marginTop = '10px';
+        sampleButton.style.background = 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)';
+        
+        sampleButton.addEventListener('click', function() {
+            const randomError = sampleErrors[Math.floor(Math.random() * sampleErrors.length)];
+            document.getElementById('errorMessage').value = randomError;
+        });
+        
+        document.getElementById('errorForm').appendChild(sampleButton);
+    </script>
+</body>
+</html>

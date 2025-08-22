@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test { background: red; color: white; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Debug Page</h1>
+    <div class="test">CSS is working if this is red with white text</div>
+    
+    <script>
+        console.log("Basic script is working");
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM loaded");
+            const testDiv = document.querySelector('.test');
+            if (testDiv) {
+                console.log("CSS selector working, background color:", window.getComputedStyle(testDiv).backgroundColor);
+            }
+        });
+    </script>
+    
+    <script type="module">
+        console.log("ES6 modules are working");
+        
+        try {
+            import('./src/js/core/transformers.js').then(transformers => {
+                console.log("Transformers loaded successfully:", Object.keys(transformers));
+            }).catch(err => {
+                console.error("Error loading transformers:", err);
+            });
+        } catch (err) {
+            console.error("Error with dynamic import:", err);
+        }
+    </script>
+</body>
+</html>
