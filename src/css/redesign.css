@@ -332,6 +332,7 @@ select.form-control {
   border-radius: var(--radius-md);
   margin-top: var(--space-lg);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: var(--text);
 }
 
 .fortune-content::before {
