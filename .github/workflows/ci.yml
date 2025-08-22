@@ -1,0 +1,46 @@
+name: CI Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run linting
+      run: npm run lint
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Test file sizes
+      run: |
+        echo "📊 File Size Report:"
+        echo "HTML: $(wc -c < index.html) bytes"
+        echo "CSS: $(wc -c < src/css/styles.css) bytes" 
+        echo "JS App: $(wc -c < src/js/app.js) bytes"
+        echo "JS Transformers: $(wc -c < src/js/transformers.js) bytes"
+        echo "Total source: $(($(wc -c < index.html) + $(wc -c < src/css/styles.css) + $(wc -c < src/js/app.js) + $(wc -c < src/js/transformers.js))) bytes"
+        
+    - name: Validate HTML
+      run: |
+        echo "✅ Validating HTML structure..."
+        grep -q "<!DOCTYPE html>" index.html && echo "✅ Valid HTML5 doctype"
+        grep -q "type=\"module\"" index.html && echo "✅ ES6 modules configured"
+        grep -q "src/css/styles.css" index.html && echo "✅ CSS linked correctly"
+        grep -q "src/js/app.js" index.html && echo "✅ JavaScript linked correctly"
