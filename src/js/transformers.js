@@ -87,7 +87,7 @@ export function tarotTransformer(error) {
 /**
  * Transform error into blame deflection
  */
-export function blameTransformer(error) {
+export function blameTransformer() {
   const excuses = [
     "This error is clearly caused by cosmic rays flipping bits in your RAM. Totally unavoidable!",
     "Mercury is in retrograde, affecting all JavaScript engines in your timezone this week.",
@@ -107,7 +107,7 @@ export function blameTransformer(error) {
 /**
  * Transform error into zen meditation
  */
-export function zenTransformer(error) {
+export function zenTransformer() {
   const openings = [
     "Breathe deeply. In the space between error and solution",
     "Be present with this moment of confusion. When code breaks",
@@ -175,7 +175,7 @@ export function motivationalTransformer(error) {
 /**
  * Transform error into tech support response
  */
-export function techSupportTransformer(error) {
+export function techSupportTransformer() {
   const responses = [
     "Have you tried turning your variables off and on again? Classic troubleshooting step #1.",
     "I see the problem here. Your code is working exactly as you wrote it, not as you intended it.",

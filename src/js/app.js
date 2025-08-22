@@ -3,7 +3,10 @@
  * Clean implementation focusing only on core functionality
  */
 
-import { transformers } from './transformers.js';
+import { transformers as originalTransformers } from './transformers.js';
+import { transformers as mockingTransformers } from './mocking-transformers.js';
+
+const transformers = { ...originalTransformers, ...mockingTransformers };
 
 /**
  * Main ErrorFortune application class
