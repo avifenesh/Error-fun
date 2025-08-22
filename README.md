@@ -2,6 +2,10 @@
 
 Transform boring error messages into hilarious fortune cookie wisdom!
 
+## 🌐 Live Demo
+
+**Try it now:** [https://avifenesh.github.io/Error-fun/](https://avifenesh.github.io/Error-fun/)
+
 ## 🎯 What It Does
 
 A simple, clean web application that takes error messages and transforms them into humorous fortunes using different styles like Confucius wisdom, Haiku poetry, Tarot readings, and more.
