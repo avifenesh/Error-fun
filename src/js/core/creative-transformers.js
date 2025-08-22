@@ -24,7 +24,7 @@ function shakespeareanTransformer(error) {
   const middles = {
     TypeError: [
       "The types doth protest too much, methinks.",
-      "What's in a type? That which we call undefined by any other name would still crash as deep.",
+      "What's in a type? That which we call undefined by any other name would still crash as deep, hath it not?",
       "This TypeError, like a poison'd chalice, brings ruin to thy program's lips."
     ],
     ReferenceError: [
@@ -496,7 +496,7 @@ function influencerTransformer(error) {
   const middles = {
     TypeError: [
       "I literally tried to use the wrong type and my code was like 'no thanks!' Major fail! 🙄",
-      "Type mismatch is my toxic trait, ngl! But we're all learning, right? 💕",
+      "Type mismatch is my toxic trait, ngl! But like, we're all learning, right? 💕",
       "My types are all over the place today! Not #sponsored by good programming practices lol! 🤣"
     ],
     ReferenceError: [
