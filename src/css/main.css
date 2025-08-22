@@ -352,6 +352,7 @@ select.form-control {
   animation: reveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   transform: translateY(20px);
   opacity: 0;
+  color: var(--text);
 }
 
 @keyframes reveal {
