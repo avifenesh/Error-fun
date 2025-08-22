@@ -15,6 +15,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -32,13 +35,23 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Prepare deployment files
+    - name: Build and prepare deployment files
       run: |
         mkdir -p deploy
         cp index.html deploy/
         cp favicon.ico deploy/
         cp -r src deploy/
+        echo "Verifying deploy directory contents:"
         ls -la deploy/
+        echo "Total files in deploy directory: $(find deploy -type f | wc -l)"
+        if [ ! -f deploy/index.html ]; then
+          echo "Error: index.html not found in deploy directory"
+          exit 1
+        fi
+        if [ ! -d deploy/src ]; then
+          echo "Error: src directory not found in deploy directory"
+          exit 1
+        fi
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
