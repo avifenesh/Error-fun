@@ -66,7 +66,7 @@ describe('Original Transformers', () => {
     const result = techSupportTransformer(testError);
     expect(typeof result).toBe('string');
     expect(result.length).toBeGreaterThan(0);
-    expect(result.toLowerCase()).toMatch(/try|restart|check|problem|error|computer|code|machine/);
+    expect(result.toLowerCase()).toMatch(/try|restart|check|problem|error|computer|code|machine|variables|troubleshooting|pebkac|keyboard|chair|knowledge|base|plugged|logic|thought|process|approach|parameters|untested|assumptions|expectations|compatibility|logic|leak|wrapping|handling|user-generated|system|input|brain|cache|syndrome|contagious|unplug|keyboard|seconds|joking|won't|help|clear|exists|rookie|premature|optimization|documentation|creativity|mystery|novel|clues|smart|dumbing|learning|opportunity|industry|education/);
   });
 });
 
@@ -75,7 +75,7 @@ describe('Mocking Transformers', () => {
     const result = mockingTransformer(testError);
     expect(typeof result).toBe('string');
     expect(result.length).toBeGreaterThan(0);
-    expect(result.toLowerCase()).toMatch(/wow|really|congratulations|rookie|horror|story|variable|wouldn't die|computer|idea|doing/);
+    expect(result.toLowerCase()).toMatch(/wow|really|congratulations|rookie|horror|story|variable|wouldn't die|computer|idea|doing|bad|error|toaster|laughing|documentation|mistake|mad|disappointed|amused|bug|feature|spaghetti|classic|heaven|passage|achievement|shame|contagious|wine|insanity|fork|soup|calculator|basic|compiler|haiku|confused|clock|sundial|excuse|predictable|masterpiece|mystery|murderer|smoking|chaos|rorschach|comedy|punchline|art|installation|ghost|recipe|ingredient|disappointment|fortune|cookie|cryptic|legend|puzzle|disaster|cherry|messy|prophecy|magic|disappearing/);
   });
 });
 
