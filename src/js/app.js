@@ -6,6 +6,7 @@
 import { transformers as originalTransformers } from './transformers.js';
 import { transformers as mockingTransformers } from './mocking-transformers.js';
 import { transformers as nerdyTransformers } from './nerdy-transformers.js';
+import CookieScene from './cookie-scene.js';
 
 const transformers = { ...originalTransformers, ...mockingTransformers, ...nerdyTransformers };
 
@@ -27,6 +28,13 @@ class ErrorFortune {
    */
   init() {
     this.cacheElements();
+    try {
+      if (this.elements.cookieMount) {
+        this.cookieScene = new CookieScene(this.elements.cookieMount);
+      }
+    } catch (e) {
+      console.warn('CookieScene init failed', e);
+    }
     this.bindEvents();
   }
   
@@ -40,9 +48,8 @@ class ErrorFortune {
       styleInputs: document.querySelectorAll('input[name="style"]'),
       fortuneDisplay: document.getElementById('fortuneDisplay'),
       originalError: document.getElementById('originalError'),
-      fortuneText: document.getElementById('fortuneText'),
-      cookieElement: document.querySelector('.cookie'),
-      sampleButton: document.getElementById('sampleButton')
+      sampleButton: document.getElementById('sampleButton'),
+      cookieMount: document.getElementById('cookieMount')
     };
   }
   
@@ -55,7 +62,12 @@ class ErrorFortune {
     }
     
     if (this.elements.sampleButton) {
-      this.elements.sampleButton.addEventListener('click', () => this.loadSample());
+      this.elements.sampleButton.addEventListener('click', () => {
+        const sample = this.loadSample();
+        const style = this.getSelectedStyle();
+        const errorMessage = this.elements.errorInput?.value.trim();
+        if (errorMessage) this.generateFortune(errorMessage, style);
+      });
     }
     
     // Keyboard shortcut: Ctrl+Enter to submit
@@ -120,21 +132,13 @@ class ErrorFortune {
       this.elements.originalError.textContent = originalError;
     }
     
-    if (this.elements.fortuneText) {
-      this.elements.fortuneText.innerHTML = fortune;
+    if (this.cookieScene) {
+      this.cookieScene.crackWithFortune(fortune);
     }
     
     // Show the fortune display
     if (this.elements.fortuneDisplay) {
       this.elements.fortuneDisplay.style.display = 'block';
-      
-      // Simple animation for the cookie
-      if (this.elements.cookieElement) {
-        this.elements.cookieElement.style.transform = 'scale(1.1)';
-        setTimeout(() => {
-          this.elements.cookieElement.style.transform = 'scale(1)';
-        }, 200);
-      }
       
       // Smooth scroll to result
       this.elements.fortuneDisplay.scrollIntoView({ 
@@ -187,6 +191,7 @@ class ErrorFortune {
       this.elements.errorInput.value = randomSample;
       this.elements.errorInput.focus();
     }
+    return randomSample;
   }
   
   /**
