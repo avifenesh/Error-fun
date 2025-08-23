@@ -68,6 +68,7 @@ export function mockingTransformer(error) {
     "Congratulations! Your '{error}' just won the award for 'Most Creative Way to Break Everything'.",
     "I see you're following the KISS principle: Keep It Stupid, Seriously. That '{error}' is a masterpiece.",
     "Your '{error}' is like a work of art - abstract, confusing, and nobody understands what you were trying to do.",
+    "Your '{error}' is like a work of art - abstract, confusing, and nobody understands what you were trying to do."
   ];
   
   const template = templates[Math.floor(Math.random() * templates.length)];
