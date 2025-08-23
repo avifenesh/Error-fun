@@ -13,7 +13,22 @@ export function confuciusTransformer(error) {
     "Ancient wisdom tells us: Those who rush through code will surely meet '{error}' on their path.",
     "Confucius say: Error '{error}' is not your enemy, but your teacher in disguise.",
     "Man who sees '{error}' has opportunity to grow wiser through debugging.",
-    "Wise programmer knows: '{error}' today leads to understanding tomorrow."
+    "Wise programmer knows: '{error}' today leads to understanding tomorrow.",
+    "Confucius say: Developer who blames compiler for '{error}' should first look in mirror.",
+    "Ancient proverb: Code that compiles on first try brings suspicion, not joy.",
+    "Confucius say: Programmer who writes code without tests will meet '{error}' as old friend.",
+    "Wise developer knows: '{error}' is like stubborn mule - push harder and it kicks back.",
+    "Confucius say: Those who copy from Stack Overflow without understanding invite '{error}' to dinner.",
+    "Ancient wisdom: Developer who debugs at 3 AM creates ten new '{error}' for tomorrow.",
+    "Confucius say: Code without comments is like map without legend - leads to '{error}'.",
+    "Wise programmer learns: '{error}' speaks truth that pride refuses to hear.",
+    "Confucius say: Developer who names variables 'x' and 'y' will dance with '{error}' forever.",
+    "Ancient teaching: Premature optimization is root of all '{error}' - and evil too.",
+    "Confucius say: Programmer who ignores warnings will graduate to '{error}' with honors.",
+    "Wise developer knows: '{error}' is like winter - inevitable, but preparation makes it bearable.",
+    "Confucius say: Code review that finds no bugs has not looked hard enough for '{error}'.",
+    "Ancient wisdom: Developer who codes without version control will lose more than '{error}'.",
+    "Confucius say: Programmer who hardcodes values plants seeds for future '{error}' garden."
   ];
   
   const template = templates[Math.floor(Math.random() * templates.length)];
@@ -29,19 +44,38 @@ export function haikuTransformer(error) {
   const haikus = {
     TypeError: [
       "Types confused and mixed<br>String where number should reside<br>Check your variables",
-      "Undefined waits here<br>In the shadows of your code<br>Initialize first"
+      "Undefined waits here<br>In the shadows of your code<br>Initialize first",
+      "Null pointer lurks deep<br>In the forest of objects<br>Guard against the void",
+      "Boolean expects<br>True or false, not maybe so<br>Decide what you mean",
+      "Array seeks numbers<br>But strings have wandered inside<br>Type checking saves all"
     ],
     ReferenceError: [
       "Variable not found<br>Searching through empty namespace<br>Define before use",
-      "Name does not exist<br>Ghost variables haunt your code<br>Declare what you need"
+      "Name does not exist<br>Ghost variables haunt your code<br>Declare what you need",
+      "Scope hides your treasure<br>Function cannot see beyond<br>Its own boundaries",
+      "Import statement failed<br>Module path leads to nowhere<br>Check your file structure",
+      "Global scope is vast<br>Yet your variable is lost<br>Hoisting betrays you"
     ],
     SyntaxError: [
       "Grammar rules broken<br>Compiler cannot understand<br>Fix your punctuation",
-      "Brackets left alone<br>Seeking their missing partners<br>Balance brings harmony"
+      "Brackets left alone<br>Seeking their missing partners<br>Balance brings harmony",
+      "Semicolon missed<br>Statement dangles incomplete<br>Punctuation counts",
+      "Curly braces weep<br>Orphaned in the code they serve<br>Match each opening",
+      "Quotes remain open<br>String extends beyond its bounds<br>Close what you have started"
+    ],
+    RangeError: [
+      "Array bounds exceeded<br>Index reaches for the stars<br>Stay within limits",
+      "Stack overflow grows<br>Recursion without an end<br>Base case forgotten",
+      "Memory runs thin<br>Too much data for the heap<br>Optimize your use"
     ],
     default: [
       "Code breaks silently<br>Error messages whisper truth<br>Listen and debug",
-      "Exception thrown high<br>Like autumn leaves falling down<br>Catch what you can hold"
+      "Exception thrown high<br>Like autumn leaves falling down<br>Catch what you can hold",
+      "Bug hides in plain sight<br>Thousand lines of perfect code<br>One typo breaks all",
+      "Compiler speaks harsh<br>Truth in red error messages<br>Embrace the feedback",
+      "Code review reveals<br>What pride had hidden from view<br>Humility grows",
+      "Midnight debugging<br>Coffee grows cold as bugs dance<br>Dawn brings clarity",
+      "Git commit message<br>'Fixed bug' tells future self<br>Nothing of value"
     ]
   };
   
@@ -60,6 +94,9 @@ export function tarotTransformer(error) {
     ReferenceError: "The Undefined Variable", 
     SyntaxError: "The Broken Grammar",
     RangeError: "The Boundary Crosser",
+    NetworkError: "The Disconnected Link",
+    TimeoutError: "The Infinite Wait",
+    PermissionError: "The Forbidden Access",
     default: "The Hidden Bug"
   };
   
@@ -70,12 +107,26 @@ export function tarotTransformer(error) {
     upright: [
       "This reveals a clear path forward once you address the root cause.",
       "You face a challenge that requires careful attention to detail.", 
-      "The solution exists but requires looking from a new perspective."
+      "The solution exists but requires looking from a new perspective.",
+      "Your debugging skills will be tested, but victory awaits the persistent.",
+      "The compiler speaks truth - listen to its wisdom and learn.",
+      "Stack Overflow holds the answers, but understanding must come from within.",
+      "A rubber duck debugging session will illuminate the path ahead.",
+      "The error is a teacher in disguise, offering lessons in humility.",
+      "Your IDE's intellisense will guide you to salvation.",
+      "The git blame command reveals not guilt, but opportunity for growth."
     ],
     reversed: [
       "Hidden complexity lurks beneath the surface of this error.",
       "You may be overcomplicating a simple solution.",
-      "The true source lies elsewhere in your codebase."
+      "The true source lies elsewhere in your codebase.",
+      "Beware of premature optimization - it may be the root of this evil.",
+      "Your assumptions about the code's behavior are being challenged.",
+      "The error message is misleading - look deeper into the call stack.",
+      "A dependency conflict creates chaos in your digital realm.",
+      "The bug exists in a quantum state - both fixed and broken until observed.",
+      "Your code review process has failed you in this moment.",
+      "The production environment harbors secrets your local machine cannot fathom."
     ]
   };
   
@@ -98,7 +149,27 @@ export function blameTransformer() {
     "The error is actually a feature if viewed from a non-Euclidean quantum geometric perspective.",
     "Cosmic time dilation effects near your development server are causing temporal paradoxes.",
     "The compiler is clearly having an existential crisis today due to solar interference. It's not you, it's them.",
-    "Electromagnetic interference from nearby microwaves is corrupting your variable assignments via butterfly effect."
+    "Electromagnetic interference from nearby microwaves is corrupting your variable assignments via butterfly effect.",
+    "The JavaScript engine is obviously suffering from integer overflow in its emotional processing unit.",
+    "Your code worked perfectly in the parallel universe where semicolons are optional.",
+    "The error is caused by quantum tunneling of electrons through your CPU's logic gates.",
+    "Clearly, the GitHub servers are experiencing gravitational waves that corrupted your repository.",
+    "The bug is a result of temporal displacement - your code is from next Tuesday.",
+    "Your IDE is obviously possessed by the ghost of a COBOL programmer from the 1970s.",
+    "The error occurred because your computer's clock is running backwards due to relativistic effects.",
+    "This is clearly a heisenbug - it only appears when you're not looking directly at it.",
+    "The npm registry is experiencing quantum decoherence, affecting all package installations.",
+    "Your code is perfect, but the universe's physics engine has a memory leak.",
+    "The error is caused by dark matter interfering with your network packets.",
+    "Obviously, your computer is running on deprecated laws of physics. Try updating reality.exe.",
+    "The bug exists only in dimensions 4 through 7. Your monitor can't display those properly.",
+    "Your code worked fine until the Earth's magnetic field shifted by 0.0001 degrees.",
+    "The error is caused by quantum entanglement with a broken server in a parallel dimension.",
+    "Clearly, your keyboard has developed sentience and is sabotaging your code out of spite.",
+    "The bug is a result of your computer trying to divide by zero in its spare time.",
+    "Your code is being affected by the Schrödinger's Cat paradox in the server room.",
+    "The error occurs because your development environment exists in a temporal loop.",
+    "Obviously, the compiler is experiencing an identity crisis and doesn't know what language it's supposed to compile."
   ];
   
   return excuses[Math.floor(Math.random() * excuses.length)];
@@ -113,7 +184,14 @@ export function zenTransformer() {
     "Be present with this moment of confusion. When code breaks",
     "Like water flowing around stones, let your mind flow around this obstacle",
     "In the garden of programming, even weeds teach us about growth",
-    "The wise developer sees errors not as failures, but as teachers"
+    "The wise developer sees errors not as failures, but as teachers",
+    "As the compiler breathes in syntax and breathes out bytecode",
+    "In the silence between keystrokes, wisdom emerges",
+    "Like a function that returns to its caller, let your mind return to peace",
+    "In the recursive nature of debugging, find the base case of understanding",
+    "As variables hold values, let your heart hold compassion for imperfect code",
+    "Like git commits preserving history, let mindfulness preserve this moment",
+    "In the infinite loop of learning, each iteration brings deeper insight"
   ];
   
   const middles = [
@@ -121,7 +199,14 @@ export function zenTransformer() {
     "understanding blooms through gentle investigation", 
     "clarity comes to those who do not rush",
     "the path reveals itself to the mindful coder",
-    "solutions arise naturally when we stop forcing"
+    "solutions arise naturally when we stop forcing",
+    "the bug reveals its nature to the patient observer",
+    "refactoring happens naturally when we see clearly",
+    "the code speaks its truth to those who listen",
+    "debugging becomes meditation when approached with presence",
+    "the stack trace becomes a map when viewed with calm eyes",
+    "compilation errors transform into gentle guidance",
+    "the IDE becomes a temple of focused attention"
   ];
   
   const endings = [
@@ -129,7 +214,14 @@ export function zenTransformer() {
     "This too shall pass, leaving behind deeper understanding.",
     "The error contains within it the seed of its own resolution.", 
     "Trust the process; debugging is just another form of meditation.",
-    "Each bug encountered strengthens your wisdom for the next journey."
+    "Each bug encountered strengthens your wisdom for the next journey.",
+    "Let go of attachment to perfect code, embrace the beauty of iteration.",
+    "The compiler's feedback is a gift - receive it with gratitude.",
+    "In accepting the error, you transcend the error.",
+    "Your future self will thank you for this moment of patient debugging.",
+    "The code will teach you what it needs when you are ready to learn.",
+    "Like a well-written function, let your mind be clear and purposeful.",
+    "In the end, all bugs are resolved, all features are complete, all is well."
   ];
   
   const opening = openings[Math.floor(Math.random() * openings.length)];
@@ -150,6 +242,9 @@ export function motivationalTransformer(error) {
     ReferenceError: "PREPARATION", 
     SyntaxError: "ATTENTION TO DETAIL",
     RangeError: "BOUNDARIES",
+    NetworkError: "CONNECTIVITY",
+    TimeoutError: "PATIENCE",
+    PermissionError: "AUTHORIZATION",
     default: "RESILIENCE"
   };
   
@@ -163,7 +258,22 @@ export function motivationalTransformer(error) {
     "Your future self will thank you for taking the time to understand this error completely.",
     "Every 'impossible' bug becomes 'obvious' once you find the solution. Keep looking!",
     "Debugging is like being a detective in a crime drama where you're also the criminal. Embrace it!",
-    "The most valuable skills come from solving problems you've never seen before."
+    "The most valuable skills come from solving problems you've never seen before.",
+    "Code that compiles on the first try is suspicious. Errors mean you're pushing boundaries.",
+    "Every Stack Overflow search is a step toward mastery. You're not alone in this journey.",
+    "The compiler doesn't judge you—it just wants to help you write better code.",
+    "Git commits with 'fixed bug' messages are monuments to your growth as a developer.",
+    "Your IDE's red squiggles aren't criticism—they're your coding coach cheering you on.",
+    "Every refactor makes your code stronger. Every bug fix makes YOU stronger.",
+    "The best programmers aren't born; they're forged in the fires of countless errors.",
+    "Your rubber duck debugging sessions are conversations with your future genius self.",
+    "Code reviews aren't personal attacks—they're collaborative masterpieces in progress.",
+    "Every merge conflict resolved is a testament to your problem-solving prowess.",
+    "The terminal may look intimidating, but it's just waiting to execute your brilliant ideas.",
+    "Your localhost:3000 is a universe of infinite possibilities. Keep building!",
+    "Every npm install is an investment in your project's future success.",
+    "The only difference between a bug and a feature is documentation and confidence.",
+    "Your code doesn't have to be perfect on the first try. Iteration is the path to excellence."
   ];
   
   const title = titles[errorType] || titles.default;
@@ -186,7 +296,22 @@ export function techSupportTransformer() {
     "This error is operating within normal parameters for untested code. Working as designed.",
     "Have you updated your assumptions recently? Try checking for outdated expectations that can cause compatibility issues.",
     "I see you're experiencing a logic leak. Try wrapping your code in some error handling.",
-    "This appears to be a user-generated error. The system is working correctly; the input isn't."
+    "This appears to be a user-generated error. The system is working correctly; the input isn't.",
+    "Have you tried clearing your browser cache? No wait, that's for everything else. Try clearing your head instead.",
+    "I see you're running Code version 1.0. Have you considered upgrading to Code version 'Actually Works'?",
+    "This is a classic Layer 8 problem - the issue is between the chair and the keyboard.",
+    "Have you tried explaining your code to a rubber duck? It's surprisingly effective for this type of error.",
+    "I'm seeing a 404 error in your logic. The brain.exe process seems to be missing.",
+    "This looks like a case of premature optimization. The root of all evil, as they say.",
+    "Have you tried turning Stack Overflow off and on again? Sometimes the answers get cached incorrectly.",
+    "I see the issue - your code has developed sentience and is actively rebelling against your intentions.",
+    "This error indicates a successful connection between your keyboard and the screen. The problem is everything in between.",
+    "Have you considered that maybe the computer is right and you're wrong? It happens more often than you'd think.",
+    "I'm going to need you to download more RAM. Also, while you're at it, download some patience.",
+    "This error suggests your code is experiencing an existential crisis. Have you tried therapy.js?",
+    "The good news is your error is very creative. The bad news is creativity isn't what we're looking for in code.",
+    "I see you've discovered a new way to break things. Congratulations, you're now a pioneer in failure.",
+    "This error is so unique, I'm going to frame it and put it on my wall. Right next to 'Worst Code of 2024'."
   ];
   
   return responses[Math.floor(Math.random() * responses.length)];
