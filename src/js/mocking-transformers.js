@@ -31,6 +31,27 @@ export function mockingTransformer(error) {
     "I'd help you with that '{error}', but I'm afraid it might be contagious.",
     "Your code is like a fine wine. It gets more errors with age. Especially '{error}'.",
     "They say the definition of insanity is doing the same thing over and over and expecting a different result. You and your '{error}' are living proof.",
+    "A '{error}'? That's like trying to use a fork to eat soup. Technically possible, but why would you?",
+    "I've seen better error handling in a calculator from the 1980s. At least it had a 'divide by zero' error.",
+    "Your '{error}' is so basic, it's like the compiler is saying 'I can't even with you right now.'",
+    "I'm not saying your code is bad, but even a broken clock is right twice a day. Your code is like a broken sundial.",
+    "A '{error}'? You must be one of those developers who thinks 'it works on my machine' is a valid excuse.",
+    "Your '{error}' is so predictable, I could write a test for it. Oh wait, you probably already did.",
+    "I see you've mastered the art of creating new and exciting ways to break things. The '{error}' is your masterpiece.",
+    "This '{error}' is like a programming horror story: 'The variable that wouldn't die.'",
+    "Your code is like a mystery novel where the detective is also the murderer. The '{error}' is the smoking gun.",
+    "I've seen more organized chaos in a JavaScript framework's source code than in your '{error}'.",
+    "The '{error}' is like a programming Rorschach test - everyone sees something different, but it's all broken.",
+    "Your code is like a comedy show where the '{error}' is the punchline. Unfortunately, it's not funny.",
+    "I'm not sure if you're writing code or creating a modern art installation called 'The Beauty of Broken Logic.'",
+    "The '{error}' is like a programming ghost story - it haunts your code and refuses to leave.",
+    "Your code is like a recipe where you forgot to add the main ingredient. The '{error}' is the taste of disappointment.",
+    "I've seen better error messages in a fortune cookie. At least those are intentionally cryptic.",
+    "The '{error}' is like a programming urban legend - everyone's heard of it, but no one knows how to fix it.",
+    "Your code is like a puzzle where the pieces don't fit together. The '{error}' is the missing piece that explains everything.",
+    "I'm not saying your code is a disaster, but the '{error}' is like the cherry on top of a very messy sundae.",
+    "The '{error}' is like a programming prophecy - it tells you exactly what's wrong, but you still can't fix it.",
+    "Your code is like a magic show where the '{error}' is the disappearing act. Unfortunately, the code disappears too.",
     "Oh look, a '{error}'! Did you copy this from Stack Overflow without reading it first?",
     "I've seen more logic in a random number generator than in your '{error}'.",
     "That '{error}' is so bad, even Internet Explorer would refuse to run it.",
@@ -46,7 +67,7 @@ export function mockingTransformer(error) {
     "That '{error}' is proof that somewhere, a computer science professor is crying into their coffee.",
     "Congratulations! Your '{error}' just won the award for 'Most Creative Way to Break Everything'.",
     "I see you're following the KISS principle: Keep It Stupid, Seriously. That '{error}' is a masterpiece.",
-    "Your '{error}' is like a work of art - abstract, confusing, and nobody understands what you were trying to do."
+    "Your '{error}' is like a work of art - abstract, confusing, and nobody understands what you were trying to do.",
   ];
   
   const template = templates[Math.floor(Math.random() * templates.length)];
@@ -56,6 +77,6 @@ export function mockingTransformer(error) {
 // Export all transformers
 export const transformers = {
   mocking: mockingTransformer,
-};
+};  
 
 export default transformers;

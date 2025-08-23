@@ -5,8 +5,9 @@
 
 import { transformers as originalTransformers } from './transformers.js';
 import { transformers as mockingTransformers } from './mocking-transformers.js';
+import { transformers as nerdyTransformers } from './nerdy-transformers.js';
 
-const transformers = { ...originalTransformers, ...mockingTransformers };
+const transformers = { ...originalTransformers, ...mockingTransformers, ...nerdyTransformers };
 
 /**
  * Main ErrorFortune application class
@@ -157,7 +158,27 @@ class ErrorFortune {
       "TypeError: Cannot set property 'innerHTML' of null",
       "ReferenceError: $ is not defined",
       "SyntaxError: Unexpected end of input",
-      "TypeError: Object.assign is not a function"
+      "TypeError: Object.assign is not a function",
+      "Error: ENOENT: no such file or directory, open 'config.json'",
+      "TypeError: Cannot read property 'map' of undefined",
+      "ReferenceError: React is not defined",
+      "SyntaxError: Unexpected token '>'",
+      "RangeError: Invalid array length",
+      "TypeError: Cannot read property 'then' of undefined",
+      "Error: ECONNREFUSED: connection refused",
+      "TypeError: Cannot read property 'split' of null",
+      "ReferenceError: document is not defined",
+      "SyntaxError: Unexpected identifier",
+      "Error: ETIMEDOUT: request timeout",
+      "TypeError: Cannot read property 'toString' of undefined",
+      "ReferenceError: window is not defined",
+      "RangeError: Maximum call stack size exceeded",
+      "TypeError: Cannot read property 'push' of undefined",
+      "Error: EACCES: permission denied, open 'package.json'",
+      "TypeError: Cannot read property 'charAt' of null",
+      "ReferenceError: require is not defined",
+      "SyntaxError: Unexpected token ';'",
+      "Error: ENOTFOUND: getaddrinfo ENOTFOUND api.example.com"
     ];
     
     const randomSample = samples[Math.floor(Math.random() * samples.length)];
