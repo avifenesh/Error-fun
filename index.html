@@ -18,6 +18,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="src/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <!-- Skip link for accessibility -->
@@ -155,8 +156,6 @@
                 
                 <!-- Fortune Display -->
                 <div id="fortuneDisplay" class="fortune-display" role="region" aria-labelledby="fortune-title" aria-live="polite">
-                    <div class="cookie" aria-hidden="true">🥠</div>
-                    
                     <h2 id="fortune-title" class="sr-only">Your Fortune</h2>
                     
                     <div class="error-message">
@@ -164,9 +163,7 @@
                         <span id="originalError">Your error will appear here</span>
                     </div>
                     
-                    <div class="fortune-content" id="fortuneText">
-                        Your wisdom will appear here...
-                    </div>
+                    <div id="cookieMount" aria-label="Fortune cookie animation" style="min-height:360px; display:grid; place-items:center; margin-top:80px;"></div>
                 </div>
             </main>
             
